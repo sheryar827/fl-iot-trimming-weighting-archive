@@ -1,0 +1,118 @@
+{
+  "cache_key": "27bfed227ef77fab",
+  "cache_meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+  "cache_npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+  "cell_key": [
+    "CNN",
+    "FedTrimmedAvg",
+    "0.1",
+    "123"
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "mirai",
+    "recon",
+    "spoofing",
+    "web"
+  ],
+  "format": "q1-e7-numpy-state-v1",
+  "frozen_config_sha256": "79a348a20c8409ea94831761b09979dc2a1b36df01216718c878c215c9e2fbeb",
+  "mode": "match_notebook",
+  "model": "CNN",
+  "npz_sha256": "accb438fc8d5a26b01e2a59bb07aac269a3cc7284bfd0234b9cce48416ef427a",
+  "num_classes": 8,
+  "num_features": 39,
+  "partition_sha256": "74e689e01bb04bb3506dcfabb66bf036b8be2cfaaf9f2a852326ee63274df03a",
+  "scale_on": "train",
+  "state": [
+    {
+      "array_key": "p000",
+      "dtype": "float32",
+      "shape": [
+        32,
+        1,
+        5
+      ],
+      "state_key": "features.0.weight"
+    },
+    {
+      "array_key": "p001",
+      "dtype": "float32",
+      "shape": [
+        32
+      ],
+      "state_key": "features.0.bias"
+    },
+    {
+      "array_key": "p002",
+      "dtype": "float32",
+      "shape": [
+        64,
+        32,
+        3
+      ],
+      "state_key": "features.2.weight"
+    },
+    {
+      "array_key": "p003",
+      "dtype": "float32",
+      "shape": [
+        64
+      ],
+      "state_key": "features.2.bias"
+    },
+    {
+      "array_key": "p004",
+      "dtype": "float32",
+      "shape": [
+        32,
+        64
+      ],
+      "state_key": "classifier.0.weight"
+    },
+    {
+      "array_key": "p005",
+      "dtype": "float32",
+      "shape": [
+        32
+      ],
+      "state_key": "classifier.0.bias"
+    },
+    {
+      "array_key": "p006",
+      "dtype": "float32",
+      "shape": [
+        32
+      ],
+      "state_key": "classifier.2.weight"
+    },
+    {
+      "array_key": "p007",
+      "dtype": "float32",
+      "shape": [
+        32
+      ],
+      "state_key": "classifier.2.bias"
+    },
+    {
+      "array_key": "p008",
+      "dtype": "float32",
+      "shape": [
+        8,
+        32
+      ],
+      "state_key": "classifier.4.weight"
+    },
+    {
+      "array_key": "p009",
+      "dtype": "float32",
+      "shape": [
+        8
+      ],
+      "state_key": "classifier.4.bias"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "accepted": {
+    "approver": "Dr Hussain Kazmi",
+    "date": "2026-09-26",
+    "prereg_sha256": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+    "proposer": "Sheryar Kiani"
+  },
+  "anchor_rows": 48,
+  "anchor_sha256": "8fb1ece1d5380ff038fcdedecc5658b5f53493bd93b3972d4647b36199a24c2b",
+  "caches": {
+    "CIC-IoT2023": {
+      "key": "27bfed227ef77fab",
+      "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+      "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38"
+    },
+    "N-BaIoT": {
+      "key": "4ddb8b93b8821650",
+      "meta_sha256": "0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23",
+      "npz_sha256": "c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854"
+    }
+  },
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "frozen_config": "q1_e4_results/reporting/Q1_E4_FROZEN_CONFIG.json",
+  "frozen_config_sha256": "3e78215912fb7e1315c7a133cc964038387a88ee8d73577d14390cca6b28f9be",
+  "initial_result_rows": 0,
+  "new_jobs": 112,
+  "partition_sha256": {
+    "CIC-IoT2023": {
+      "123": "74e689e01bb04bb3506dcfabb66bf036b8be2cfaaf9f2a852326ee63274df03a",
+      "127": "d6fbc871d4c6ca1fcd3d3ba9519c5227a78aa317ada71e24640dc38bcd0fdcec",
+      "131": "2a82f966a94246c04d00f4bf9dafcf05e35c9a8a4022ad93bed721e983855d61",
+      "137": "d0cf4a3171b3ecc4b7116604e5b5b1fe7e09d0fef9024ea66041554223814167",
+      "139": "e4d97f11c4b63e93050ba853aacf6d14b3839e428aa4e36eddd372e44a3662ed",
+      "149": "e98eb725a455d8aa41db6c13852d19b00f65d4e10fd1bd1681694b5b23623160",
+      "151": "dec1a709d74aba856626f2e3d67083bc2f86c4fe88c42dff57e0af63c9edc7bf",
+      "157": "9e7a9a32ffe0433cc53d36dd526f8c0872d91c2c4b82780c47ca669326239828",
+      "42": "e43250a6149aabdf6fdb9566b84b62070d0df9e2d56cd62a019df65e84fcb7ca",
+      "7": "43b9931c694a938b74e611235948563d6ac96ed0f7cb56baf79e72d8911ce8f4"
+    },
+    "N-BaIoT": {
+      "device": "066bf886d4a7c6828d4d8d9cd189c707bbb6cc0132273f480c95039107ba32c3"
+    }
+  },
+  "prereg_sha256": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+  "status": "PASS",
+  "training_started": false,
+  "written_utc": "2026-09-27T03:41:11.290592+00:00"
+}

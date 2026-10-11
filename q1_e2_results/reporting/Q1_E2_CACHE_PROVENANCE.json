@@ -1,0 +1,14 @@
+{
+  "written_utc": "2026-09-21T08:47:17.710726+00:00",
+  "cache_key": "4ddb8b93b8821650",
+  "scale_on": "train",
+  "npz_sha256": "c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854",
+  "meta_sha256": "0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23",
+  "versions": {
+    "python": "3.12.10",
+    "torch": "2.5.1+cu121",
+    "cuda": "12.1",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0"
+  }
+}

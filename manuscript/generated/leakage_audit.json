@@ -1,0 +1,119 @@
+{
+  "CIC-IoT2023": {
+    "npz_keys": [
+      "X_test",
+      "X_train",
+      "cid_train",
+      "y_test",
+      "y_train"
+    ],
+    "n_train": 4825692,
+    "n_test": 1206424,
+    "unique_train_rows": 3565650,
+    "test_rows_exactly_in_train": 381765,
+    "test_row_match_fraction": 0.31644347260996136,
+    "train_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "test_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "test_classes_missing_from_train": [],
+    "train_classes_missing_from_test": [],
+    "cid_test_stored": false,
+    "train_source_ids": [
+      0
+    ]
+  },
+  "N-BaIoT": {
+    "npz_keys": [
+      "X_test",
+      "X_train",
+      "cid_test",
+      "cid_train",
+      "y_test",
+      "y_train"
+    ],
+    "n_train": 1418112,
+    "n_test": 354529,
+    "unique_train_rows": 742236,
+    "test_rows_exactly_in_train": 211718,
+    "test_row_match_fraction": 0.597181048658925,
+    "train_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "test_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "test_classes_missing_from_train": [],
+    "train_classes_missing_from_test": [],
+    "train_source_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "test_source_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "source_ids_in_both": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "test_rows_from_train_source": 354529
+  }
+}

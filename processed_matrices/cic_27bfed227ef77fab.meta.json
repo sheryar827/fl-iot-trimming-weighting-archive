@@ -1,0 +1,27 @@
+{
+  "dataset": "CIC-IoT2023",
+  "num_features": 39,
+  "num_classes": 8,
+  "n_train": 4825692,
+  "n_test": 1206424,
+  "classes": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "mirai",
+    "recon",
+    "spoofing",
+    "web"
+  ],
+  "devices": [
+    "cic_testbed"
+  ],
+  "max_samples_per_file": 20000,
+  "test_fraction": 0.2,
+  "global_seed": 42,
+  "extract_dir": "C:\\Elicit_FedTrim_Novelty_Audit\\aoa-dear-i-have-commented-the\\Research Paper\\cic_iot_2023_dataset",
+  "cache_key": "27bfed227ef77fab",
+  "scale_on": "train",
+  "probe_target_mlp_fedavg_a1_s42_final_f1": 0.6646197239002002
+}

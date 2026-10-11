@@ -1,0 +1,36 @@
+{
+  "num_features": 115,
+  "num_classes": 11,
+  "n_train": 1418112,
+  "n_test": 354529,
+  "classes": [
+    "benign",
+    "gafgyt_combo",
+    "gafgyt_junk",
+    "gafgyt_scan",
+    "gafgyt_tcp",
+    "gafgyt_udp",
+    "mirai_ack",
+    "mirai_scan",
+    "mirai_syn",
+    "mirai_udp",
+    "mirai_udpplain"
+  ],
+  "devices": [
+    "danmini_doorbell",
+    "ecobee_thermostat",
+    "ennio_doorbell",
+    "philips_b120n10_baby_monitor",
+    "provision_pt_737e_security_camera",
+    "provision_pt_838_security_camera",
+    "samsung_snh_1011_n_webcam",
+    "simplehome_xcs7_1002_wht_security_camera",
+    "simplehome_xcs7_1003_wht_security_camera"
+  ],
+  "max_samples_per_file": 20000,
+  "test_fraction": 0.2,
+  "global_seed": 42,
+  "extract_dir": "C:\\Elicit_FedTrim_Novelty_Audit\\aoa-dear-i-have-commented-the\\nbaiot_data\\extracted",
+  "cache_key": "4ddb8b93b8821650",
+  "scale_on": "train"
+}

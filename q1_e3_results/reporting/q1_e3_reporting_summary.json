@@ -1,0 +1,11 @@
+{
+  "built_utc": "2026-09-12T09:23:18.808443+00:00",
+  "n_rows": 20,
+  "n_gates": 3,
+  "n_step1": 10,
+  "n_step2": 7,
+  "h2_s42_local_gap_pp": -6.942878380715167,
+  "mean_roundwise_macro_F1_note": "column AUC is mean of 30 round-wise macro-F1, not ROC-AUC",
+  "contract": "Q1-E3 Done (prereg cells) \u2014 applied 2026-09-12; proposer Sheryar Kiani; approver Dr Hussain Kazmi",
+  "checksum_scope": "SHA256SUMS lists reporting CSVs/JSON/markdown + step1/step2 raw + this builder (10 entries). It does not individually hash the 20 history CSVs, 20 per-run JSON reports, or Q1_CONTRIBUTION_CONTRACT.md."
+}

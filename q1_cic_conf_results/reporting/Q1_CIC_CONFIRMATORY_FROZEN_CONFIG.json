@@ -1,0 +1,35 @@
+{
+  "rev": "r5-ACCEPTED",
+  "written_utc": "2026-09-12T11:24:30.318487+00:00",
+  "accepted": {
+    "proposer": "Sheryar Kiani",
+    "approver": "Dr Hussain Kazmi",
+    "date": "2026-09-12",
+    "credentials_text": "Hussain Kazmi"
+  },
+  "cfg_full_subset": {
+    "max_samples_per_file": 20000,
+    "num_rounds": 30,
+    "local_epochs": 3,
+    "batch_size": 512,
+    "lr": 0.001,
+    "test_fraction": 0.2,
+    "optimizer": "adam",
+    "trimmed_fraction": 0.1,
+    "num_clients": 9
+  },
+  "split_global_seed": 42,
+  "scale_on": "train",
+  "mode": "match_notebook",
+  "legacy_cic_cache_key_rejected": "b725017696446067",
+  "expected_train_cache_key_this_machine": "27bfed227ef77fab",
+  "planning_min_mlp": 122.66,
+  "planning_min_cnn": 166.84,
+  "file_sha256": {
+    "fl_local/engine.py": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+    "fl_local/cic_cache.py": "91a322560c7a4ad3d47ed70dcc70ab2e00f6db134490debc872a35eb6b0760e3",
+    "fl_local/PREPROCESS_PROTOCOL.md": "4ce920836705e7a6ad001824d92996c75bdba9bcf5af495965edc4031759425f",
+    "run_q1_cic_confirmatory.py": "7e7889c5a2260c95292711464070cf98493eadad57c7328bb28383acae8ad6d9",
+    "q1_cic_conf_results/reporting/Q1_CIC_CONFIRMATORY_PREREG_DRAFT.md": "1b3014f7cc20aa0f33724049f70acb2350424274f07521c03fe72d5d09061aaf"
+  }
+}

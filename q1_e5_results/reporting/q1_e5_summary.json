@@ -1,0 +1,114 @@
+{
+  "accepted_preregistration_sha256": "cd20c7a61b3a41ad214cc51bf4221f7837604fd1236f75282fd07be346ec6517",
+  "cache_npz_rehashed": false,
+  "cells": 28,
+  "comparisons": [
+    {
+      "block": "T1",
+      "ci95_high_pp": "2.3841684052140613",
+      "ci95_low_pp": "-1.6900200597375576",
+      "contrast": "FT-CoordMedian",
+      "dataset": "CIC-IoT2023",
+      "decision": "inconclusive",
+      "holm_p": "1.0",
+      "mean": 0.0034707417273825186,
+      "mean_pp": "0.34707417273825186",
+      "model": "MLP",
+      "negative": 3,
+      "positive": 4,
+      "raw_p": "0.6912575994071924",
+      "supported_direction": null,
+      "t_statistic": "0.4168977030912353",
+      "zero": 0
+    },
+    {
+      "block": "T2",
+      "ci95_high_pp": "2.9979892182787977",
+      "ci95_low_pp": "-1.720322072444092",
+      "contrast": "FT-CoordMedian",
+      "dataset": "CIC-IoT2023",
+      "decision": "inconclusive",
+      "holm_p": "1.0",
+      "mean": 0.00638833572917353,
+      "mean_pp": "0.638833572917353",
+      "model": "CNN",
+      "negative": 3,
+      "positive": 4,
+      "raw_p": "0.5322009519695734",
+      "supported_direction": null,
+      "t_statistic": "0.6625969946299447",
+      "zero": 0
+    },
+    {
+      "block": "T5",
+      "ci95_high_pp": "0.9537158354296669",
+      "ci95_low_pp": "-4.536286406529948",
+      "contrast": "FT-CoordMedian",
+      "dataset": "N-BaIoT",
+      "decision": "inconclusive",
+      "holm_p": "0.6457274081681136",
+      "mean": -0.017912852855501402,
+      "mean_pp": "-1.7912852855501402",
+      "model": "MLP",
+      "negative": 4,
+      "positive": 3,
+      "raw_p": "0.1614318520420284",
+      "supported_direction": null,
+      "t_statistic": "-1.5967633530254206",
+      "zero": 0
+    },
+    {
+      "block": "T6",
+      "ci95_high_pp": "1.5232735049056152",
+      "ci95_low_pp": "-4.888243648898091",
+      "contrast": "FT-CoordMedian",
+      "dataset": "N-BaIoT",
+      "decision": "inconclusive",
+      "holm_p": "0.7392634717495772",
+      "mean": -0.016824850719962377,
+      "mean_pp": "-1.6824850719962376",
+      "model": "CNN",
+      "negative": 3,
+      "positive": 4,
+      "raw_p": "0.24642115724985905",
+      "supported_direction": null,
+      "t_statistic": "-1.2842179357189156",
+      "zero": 0
+    }
+  ],
+  "completion_signature": false,
+  "df": 6,
+  "difference": "sealed FedTrimmedAvg-Adam minus CoordMedian-Adam",
+  "endpoint": "unrounded Final macro-F1 at round 30",
+  "equivalence_procedure": false,
+  "family": [
+    [
+      "T1",
+      "FT-CoordMedian"
+    ],
+    [
+      "T2",
+      "FT-CoordMedian"
+    ],
+    [
+      "T5",
+      "FT-CoordMedian"
+    ],
+    [
+      "T6",
+      "FT-CoordMedian"
+    ]
+  ],
+  "family_alpha": 0.05,
+  "fednova": "deferred",
+  "first_started_utc": "2026-10-07T14:46:15Z",
+  "frozen_config_sha256": "3e78215912fb7e1315c7a133cc964038387a88ee8d73577d14390cca6b28f9be",
+  "holm_scope": "these four tests only; not Q1-E4 and not the historical eight-test family",
+  "last_finished_utc": "2026-10-09T19:25:19Z",
+  "manuscript_freeze": false,
+  "n": 7,
+  "progress_log_lines": 899,
+  "sealed_seed_csv_sha256": "8a9218a130486b68c69f3dd40cf5dd82a217add985c66a91af6fe3dd97da90c9",
+  "study": "Q1-E5 CoordMedian-Adam versus sealed FedTrimmedAvg-Adam",
+  "supported_blocks": []
+}

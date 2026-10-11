@@ -1,0 +1,1545 @@
+{
+  "accepted": {
+    "approver": "Dr Hussain Kazmi",
+    "date": "2026-09-26",
+    "prereg_sha256": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+    "proposer": "Sheryar Kiani"
+  },
+  "analysis": {
+    "block_rules": {
+      "Htrim": "FT-UW positive supported AND WT-FA positive supported",
+      "Hweight-hurt": "FA-UW negative supported AND WT-FT negative supported"
+    },
+    "combined_decision_p_values": false,
+    "combined_label": "combined data-informed estimate",
+    "combined_seeds": [
+      7,
+      42,
+      123,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157
+    ],
+    "comparison_order": [
+      [
+        "T1",
+        "FT-UW"
+      ],
+      [
+        "T1",
+        "WT-FA"
+      ],
+      [
+        "T1",
+        "FA-UW"
+      ],
+      [
+        "T1",
+        "WT-FT"
+      ],
+      [
+        "T2",
+        "FT-UW"
+      ],
+      [
+        "T2",
+        "WT-FA"
+      ],
+      [
+        "T2",
+        "FA-UW"
+      ],
+      [
+        "T2",
+        "WT-FT"
+      ],
+      [
+        "T5",
+        "FT-UW"
+      ],
+      [
+        "T5",
+        "WT-FA"
+      ],
+      [
+        "T5",
+        "FA-UW"
+      ],
+      [
+        "T5",
+        "WT-FT"
+      ],
+      [
+        "T6",
+        "FT-UW"
+      ],
+      [
+        "T6",
+        "WT-FA"
+      ],
+      [
+        "T6",
+        "FA-UW"
+      ],
+      [
+        "T6",
+        "WT-FT"
+      ]
+    ],
+    "component_rule": "supported only with preregistered mean direction and Holm-adjusted p < 0.05; significant opposite direction is reversal; otherwise inconclusive",
+    "existing_seeds_excluded_from_tests": [
+      42,
+      123,
+      7
+    ],
+    "family_alpha": 0.05,
+    "holm_tie_break": "canonical comparison_order",
+    "inconclusive_is_equivalence": false,
+    "interaction": "secondary descriptive only; excluded from Holm",
+    "multiplicity": "Holm FWER across exactly 16 comparisons",
+    "primary_endpoint": "unrounded Final macro-F1 at round 30",
+    "prospective_df": 6,
+    "prospective_n": 7,
+    "prospective_seeds": [
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157
+    ],
+    "support_threshold": "Holm-adjusted p < 0.05 (strict)",
+    "test": "two-sided paired t-test (one-sample t-test of paired differences against zero)",
+    "ties": "exact zero; not supported",
+    "zero_sd_rule": {
+      "nonzero_mean": "p=0; point CI; t represented as null",
+      "zero_mean": "p=1; CI=[0,0]; t=0"
+    }
+  },
+  "baseline": {
+    "anchor_csv": "q1_e4_results/reporting/Q1_E4_BASELINE_ANCHORS.csv",
+    "anchor_sha256": "8fb1ece1d5380ff038fcdedecc5658b5f53493bd93b3972d4647b36199a24c2b",
+    "rows": 48,
+    "selection": "CIC exact alpha=0.1 plus N-BaIoT exact device partition; both models, four arms, seeds 42/123/7",
+    "source_manifest_sha256": {
+      "CIC-IoT2023": "9607c022006e91415b0895ccc588fd0b8e72df2c4e0ae656536d95c7bf10b884",
+      "N-BaIoT": "eaaab95ca93919ba3306b7c81a291dd02f72d8eb5893ab90923369510974322d"
+    },
+    "source_raw_sha256": {
+      "CIC-IoT2023": "cadae7a0d3a35639c485bc2d8e9eae701ff5d82a0d320c12937c9f74615a74a5",
+      "N-BaIoT": "5abe64b5c398295908d2eae8dea9633239c29231a05eca356016d0e324082a69"
+    }
+  },
+  "caches": {
+    "CIC-IoT2023": {
+      "classes": [
+        "benign",
+        "bruteforce",
+        "ddos",
+        "dos",
+        "mirai",
+        "recon",
+        "spoofing",
+        "web"
+      ],
+      "devices": [
+        "cic_testbed"
+      ],
+      "from_existing_only": true,
+      "key": "27bfed227ef77fab",
+      "meta_name": "cic_27bfed227ef77fab.meta.json",
+      "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+      "n_test": 1206424,
+      "n_train": 4825692,
+      "npz_keys": [
+        "X_test",
+        "X_train",
+        "cid_train",
+        "y_test",
+        "y_train"
+      ],
+      "npz_name": "cic_27bfed227ef77fab.npz",
+      "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+      "num_classes": 8,
+      "num_features": 39,
+      "scale_on": "train"
+    },
+    "N-BaIoT": {
+      "classes": [
+        "benign",
+        "gafgyt_combo",
+        "gafgyt_junk",
+        "gafgyt_scan",
+        "gafgyt_tcp",
+        "gafgyt_udp",
+        "mirai_ack",
+        "mirai_scan",
+        "mirai_syn",
+        "mirai_udp",
+        "mirai_udpplain"
+      ],
+      "devices": [
+        "danmini_doorbell",
+        "ecobee_thermostat",
+        "ennio_doorbell",
+        "philips_b120n10_baby_monitor",
+        "provision_pt_737e_security_camera",
+        "provision_pt_838_security_camera",
+        "samsung_snh_1011_n_webcam",
+        "simplehome_xcs7_1002_wht_security_camera",
+        "simplehome_xcs7_1003_wht_security_camera"
+      ],
+      "from_existing_only": true,
+      "key": "4ddb8b93b8821650",
+      "meta_name": "nbaiot_4ddb8b93b8821650.meta.json",
+      "meta_sha256": "0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23",
+      "n_test": 354529,
+      "n_train": 1418112,
+      "npz_keys": [
+        "X_test",
+        "X_train",
+        "cid_test",
+        "cid_train",
+        "y_test",
+        "y_train"
+      ],
+      "npz_name": "nbaiot_4ddb8b93b8821650.npz",
+      "npz_sha256": "c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854",
+      "num_classes": 11,
+      "num_features": 115,
+      "scale_on": "train"
+    }
+  },
+  "cfg": {
+    "batch_size": 512,
+    "dirichlet_alphas": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "fedprox_mu": 0.01,
+    "local_epochs": 3,
+    "lr": 0.001,
+    "max_samples_per_file": 20000,
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "num_clients": 9,
+    "num_rounds": 30,
+    "optimizer": "adam",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "sgd_momentum": 0.9,
+    "test_fraction": 0.2,
+    "trimmed_fraction": 0.1
+  },
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "file_sha256": {
+    "fl_local/PREPROCESS_PROTOCOL.md": "4ce920836705e7a6ad001824d92996c75bdba9bcf5af495965edc4031759425f",
+    "fl_local/cic_cache.py": "91a322560c7a4ad3d47ed70dcc70ab2e00f6db134490debc872a35eb6b0760e3",
+    "fl_local/e2_partition.py": "72778f968a03d2f934801b9270e4cdbfeb2759ad7960b20f514e2069c863e8a2",
+    "fl_local/e4_artifacts.py": "f08b15541c48788a30c7d7cfbc485f13e9e03969eb1e7325aa39c2c268c70cd7",
+    "fl_local/e4_stats.py": "2c14839aa30cbbb9fd34fc5a1778d8fbeaae3c95499eebff336b6bf34c8c34c4",
+    "fl_local/engine.py": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+    "fl_local/nbaiot_cache.py": "55e0a136e54bb0759497aae7bcce1402ed9b56149614aaf38c4260b0f7c04693",
+    "q1_cic_conf_results/csv/q1_cic_conf_raw.csv": "cadae7a0d3a35639c485bc2d8e9eae701ff5d82a0d320c12937c9f74615a74a5",
+    "q1_cic_conf_results/reporting/Q1_CIC_CONFIRMATORY_CACHE_PROVENANCE.json": "444a25c446921703199153e467149593368e4d86185fcc5e7623ae31bc4b90ce",
+    "q1_cic_conf_results/reporting/Q1_CIC_CONFIRMATORY_FROZEN_CONFIG.json": "fb8623f085e944493840e561c4765c606177e3223a3addca58b4700429db2d2c",
+    "q1_cic_conf_results/reporting/SHA256SUMS.txt": "9607c022006e91415b0895ccc588fd0b8e72df2c4e0ae656536d95c7bf10b884",
+    "q1_e2_results/csv/q1_e2_raw.csv": "5abe64b5c398295908d2eae8dea9633239c29231a05eca356016d0e324082a69",
+    "q1_e2_results/reporting/Q1_E2_CACHE_PROVENANCE.json": "f8d878254bc06b5d579fe38596a86ddc501e0837d59063a139051597f7b2fa3f",
+    "q1_e2_results/reporting/Q1_E2_PREREG_DRAFT.md": "937dd31fb0124d39cbad683dae37b3286f3a147b88b11d7d84229b7d478485c5",
+    "q1_e2_results/reporting/SHA256SUMS.txt": "eaaab95ca93919ba3306b7c81a291dd02f72d8eb5893ab90923369510974322d",
+    "q1_e4_results/reporting/Q1_E4_TRAIN_SCALER_SEED_AMENDMENT_DRAFT.md": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+    "run_q1_e4_train_scaler.py": "8b9b25e127eb0267e70460b0eb2a570e2edd42a465eff87304737ca3bcaff64d",
+    "tools/build_q1_e4_frozen_config.py": "0f752ab5d55483302b20c7e42dedbf8171623c82e09a81cec60c5447fa156aaa",
+    "tools/build_q1_e4_packet.py": "94134a075f4f9d3d1c8b8b6d81f6db96356eb0ec63b893ee0206a1f44c01cc36",
+    "tools/test_q1_e4_integrity.py": "635bc0a05da4c8a3db42d1ad7eb4b03484ca80a0b273a389f9a712fb604d307b"
+  },
+  "freeze_date": "2026-09-26",
+  "partitions": {
+    "CIC-IoT2023": {
+      "123": {
+        "client_index_sha256": [
+          "f096185bce4c801630dc16f0c5c0007cf41ebfa47de010e29bcccb1216f2cedf",
+          "874a53da1345fd34722fb17ab607ac347101493b0a8d6f30c119acf3211e434e",
+          "782f1182248d29dcacc5694b3e051581ffdbbfcd9a3ab1026b0a349764cc9284",
+          "532e0ed0c9630b8afcee18b06666c7c55036c968f16b84c56939831e50c0123a",
+          "fbedf043a98f03efa3eb3b20edbc91d7cc1e52788b73a4175d8b66534acfde12",
+          "108642353ecd9d4d45d8da25fec776d39ef83bfb3bee52b5362cc4dd972835e6",
+          "38802c0ac4e08fc63bfe9810e9593371979e11bf91f5dd1e0b6c6c3a485873da",
+          "cf55697d09f9a36d24cb66ddcc016b7e58e04bec118165e2d00dc6034cab7dec",
+          "0914b0134f38093b9fe079e08a5a15464102e1c7cf0a5f1b793e2058a8ec45d0"
+        ],
+        "client_sizes": [
+          295771,
+          98232,
+          89579,
+          166924,
+          73376,
+          358193,
+          479245,
+          2963583,
+          300789
+        ],
+        "sha256": "74e689e01bb04bb3506dcfabb66bf036b8be2cfaaf9f2a852326ee63274df03a"
+      },
+      "127": {
+        "client_index_sha256": [
+          "38da3aa5553f9be9c8cf2547989ad8cf5fbc1d61c8172a9c0d037ad5d0effc3c",
+          "3dbc333d60193345236a508aa1e8e7ae8bdbacf815ee7a552c57a5388591deff",
+          "b176f7c53ff930baf17ebd566ee2220fc9c095c5c794f9eac021b6e0cb12d9e9",
+          "72ea5c5d5fe1794a66d0e47ab29146eebfe119574b2ba2de166431262fb073e9",
+          "f0621e5a4ee0ea9e0daaa3cf507a3e2a44fcc709e5a52e946b643b09851c14ff",
+          "6c77677535d28ceabe69d54acf526abba371cdf48339683f213e6e0d7277cb01",
+          "7ca16247017abfa1b8fade441f25a5ba9a31b9e937e10bf36ed738676b1cd6ff",
+          "6838deee73f44e6dd3a860cf138d15cc254043d7c0b7d0279452dd5e35edfe9b",
+          "cc995696af95bdd01bdae50cf76b58169af22a0d5c9a74b13b6f336cff838e5e"
+        ],
+        "client_sizes": [
+          174215,
+          69044,
+          1170083,
+          7652,
+          367885,
+          576922,
+          46276,
+          18388,
+          2395227
+        ],
+        "sha256": "d6fbc871d4c6ca1fcd3d3ba9519c5227a78aa317ada71e24640dc38bcd0fdcec"
+      },
+      "131": {
+        "client_index_sha256": [
+          "19138dc64fbc67af028fd01c72e5961d65ad4bb11b0a2c985392c8085a0e7303",
+          "3c9891c44c79afd4e9df523347c64fe2eb68d25798c0c8e83b83ba864ee8cf6b",
+          "25551243b0147fe355f48682f0385e438b2e5164efab1be88871c8c6dbf7a8b4",
+          "512e749045e81d4e4df10e7abc48c97ee929253e0ab900f4c973030b723fcdc8",
+          "9f03377ea431b6857ce9d2a2ab58c07e51e2ef2d186d59056873924a70d5db66",
+          "ba0ed69811a1bf340d1f78cbccc65e3b48970d95fc23a08db05ef6b202b692ac",
+          "6016cdeec3f366df7839f24f794eeb808337f447fca0fce6e5bd9c1f4ea3886e",
+          "63c5bb2a598d39a1bb319fb1ee3ff78fa16e11e3b85a7bc1ae6767e8ca372b18",
+          "a6cf77f29d43012974213311d6dfd7cb04a167cde5f472431c01cb14cc2aa69d"
+        ],
+        "client_sizes": [
+          469256,
+          411393,
+          155184,
+          120178,
+          278829,
+          452330,
+          491867,
+          1301733,
+          1144922
+        ],
+        "sha256": "2a82f966a94246c04d00f4bf9dafcf05e35c9a8a4022ad93bed721e983855d61"
+      },
+      "137": {
+        "client_index_sha256": [
+          "8135293deae7160a1656308fe9d9d39ffbfb11fdeb3eedc2a27ebc16ec1b15ac",
+          "0272d03f2421d616729690f3a0c1795101d4378559213f143b70041ba9af1939",
+          "455de6dade7ea21d78374a4c81420e0b26ce2ecab5042b1c209d14ca4910703c",
+          "1cb1e852bac49ede416776e8321605382241568eb8679b81b5f3a5ea0d8c1496",
+          "90e6c816c76406c706f820f80ffc61ad0c35d785b5f096b79380ab13e06b3d35",
+          "dd9d890e024531bc47fb21d1b918254125323bcf87b75b72eb9bf20dcfff166b",
+          "3a3653d066bb97638d9ddae4d263c481b6d0e690119297a644cbf3ee3e3400da",
+          "83a209cba8a39c01ec4a9b9d3b89b303ae57f51291c1c631864e4a56125bd324",
+          "12f9d7c2da2d63593e0fe35ebb2e78792bbdb2d03428e2f4cf9bb1694bd453e6"
+        ],
+        "client_sizes": [
+          18412,
+          1005387,
+          371200,
+          141399,
+          1219,
+          452511,
+          1895895,
+          116928,
+          822741
+        ],
+        "sha256": "d0cf4a3171b3ecc4b7116604e5b5b1fe7e09d0fef9024ea66041554223814167"
+      },
+      "139": {
+        "client_index_sha256": [
+          "20fbb3ccaa71d2bae03f5bb5bdd3f528baad8aa6f527cb5ea5bebf8ae400756d",
+          "03f8325f79abf0c9fd695b3a0fad8445ab00f35d91a3feeb82a92024acdc0a5f",
+          "241ebae0e114311cc90f34cd098486bb4afe60ccd264f8d12f9b6c50614206c3",
+          "d90c61fa01bd9104582988599976dfbdfc9c456fa030fffb6b07ab2fe9268383",
+          "24851e21586ef674076d02253de486e82a88ae4be17530e7a777bf3d8a5c4aed",
+          "61f9438cc9af0dc11eea80074daf254b47f1aec344a9dd84c095a996a36735dc",
+          "6679515a555cb9865d2e5cbea070d53fc604db0f48613ffa49c27904b89ffb39",
+          "7d762d8d3ec199b7ee893c86cd7bd23361ea161a4f4871e312e864c2e42545b9",
+          "2fd4d85ad64fb82ecbfee875cef526cfa62d8905c6e5528c236d50993e84c7c2"
+        ],
+        "client_sizes": [
+          2568302,
+          27236,
+          45927,
+          204207,
+          266380,
+          367180,
+          883775,
+          113538,
+          349147
+        ],
+        "sha256": "e4d97f11c4b63e93050ba853aacf6d14b3839e428aa4e36eddd372e44a3662ed"
+      },
+      "149": {
+        "client_index_sha256": [
+          "89e5108d52d550a2b26b4ee0836f2ed488d05e6732ce277c7e262c22f2c7a3bc",
+          "a998cd3bd940e4ef807f569628b9d1233ece5b7cecdc5d45b2ab27c99565e0eb",
+          "3380d0cca0b898844682dfa0cdb39bf3f4e58a03fe9ce3da4d67dbdd766e3621",
+          "75933eaf0ebf336f3b10388b04f7ca27d51f10d53a0a3617c3079c7b596f7c96",
+          "aed71a2fd7dcab249ed2962422f34a91093d08ed6f4d87751656845c7c31355c",
+          "a05c021eae16123cb3cd29d66c37e306baf790645fd18d160f8f58df30111715",
+          "c738d400dec62bd15b21f421b64efb2828905a6f5cc0f45ef129df696299b3cd",
+          "d4bd93e6e26630c7c2fd0441cbdd6838f2db17295bbace2e709f40f56244aded",
+          "f09f27205c4d976674555f10ef3e85b0687e6bfc93871ff46a6d24eeb341b702"
+        ],
+        "client_sizes": [
+          1271152,
+          55542,
+          34483,
+          1367623,
+          84371,
+          1406112,
+          57383,
+          56948,
+          492078
+        ],
+        "sha256": "e98eb725a455d8aa41db6c13852d19b00f65d4e10fd1bd1681694b5b23623160"
+      },
+      "151": {
+        "client_index_sha256": [
+          "fea2b52bc33277b02eb85fbd9a4c84fbff75d54a033bc2688d3dbc03b9fb769c",
+          "6a2364a30fdf67e9bc06c86675e38e98c88493c40f589239b10c550f647f225d",
+          "d5ff58e283e67af7adcabd5677834674796c12e095b2774c7b1f51c4f80157ab",
+          "ce2bb816440d145204dcbb197d0b671a124fdcfde7b5d2094236ea6486ee0cbc",
+          "0469c21bb1fe38d812ae0eadea0869977a9c9e238d8f51816dfb2185a31464d6",
+          "692795316f5909da272f244fa02e2f85e14225388474813545f99ea7c363cd58",
+          "667d7e5d69fea31f3a5fdd037d24fdf2cbb0526ba2540e1f46028eecefc1a23a",
+          "388cab20cc9c45f69508d2c4a428df7754488c69a3887ae303a8b6c014fbc0cf",
+          "90c89e9492e53ed5840ff7864360044e2bb8966c7d321721feb66723304e1aa9"
+        ],
+        "client_sizes": [
+          2008503,
+          117499,
+          304740,
+          55353,
+          1118205,
+          953123,
+          5335,
+          80237,
+          182697
+        ],
+        "sha256": "dec1a709d74aba856626f2e3d67083bc2f86c4fe88c42dff57e0af63c9edc7bf"
+      },
+      "157": {
+        "client_index_sha256": [
+          "fd9b2dc5daa42eea10d4c479f5c88136d2cfc60f4c649f641e86481dbe556107",
+          "1d955d935ba7411331ef4dd1f7ed960a092cd6213923b6ebebef7a99187619e5",
+          "22625e0a36b76abe663a5761b5352004249c39329fe115923d5c08d5347278ab",
+          "f4a89bc26c51ce4cf679f426fdfd40ff7e81ab269f3393fd439026c08f556d26",
+          "08d7a22651a269c6ef752680223750808fb800e02b6272bd969d39f9f55245fc",
+          "ec3121429cafdab61b5777539fde80dd72ec537dd3ab6883f6426d08ffb17941",
+          "71b7c980b2f2c51bf9d9b128a72007e425df8203cbd906fe625ace31da637ee0",
+          "890e575699003ed28d8475e01b264cc213d040b14d6ee67cc8f0f05a8dffc9a8",
+          "5c0f9e3b311134117a6fccee098e912f57fb8a99b301310bea7eaf0d4e40decc"
+        ],
+        "client_sizes": [
+          21974,
+          2819296,
+          28932,
+          3286,
+          64134,
+          3147,
+          267024,
+          590314,
+          1027585
+        ],
+        "sha256": "9e7a9a32ffe0433cc53d36dd526f8c0872d91c2c4b82780c47ca669326239828"
+      },
+      "42": {
+        "client_index_sha256": [
+          "b59de27dfc060f6040b3c6efc28ab1f241dbe1fd11ef8fa0a789e29f6df54135",
+          "20d98d19aada0ff4340f4052898c37fffec22c222492521d7d34b2b59fedd22b",
+          "202722dd0ad0392363387218eef300601090f1d207325226926883718dcd5e4e",
+          "34c58a836317e204bc6aeb1adace03023be9f89223ecc17a68e4de7dbc1c7624",
+          "1c82e964f2c2523a3c6429fd94f568a924a345b748236f1f554b4e3d84a7a24e",
+          "867edea8fbc68b21d7c7599c3fb5c27d8c98083efcd34a8119f0ecb3c5507bb3",
+          "971674f64c1f74fe410a2785a3ed29e34db5b87f29115e05d06029bd23736b07",
+          "186db17d30823ff3770278d83ec4072e31a7860fc5236d99c2962d671da39081",
+          "1707a7f8da3fad2d99582251db6b476fe9342c0fba97c2cd11db6b3482d24658"
+        ],
+        "client_sizes": [
+          390284,
+          803016,
+          14218,
+          278396,
+          8466,
+          121015,
+          1509335,
+          492468,
+          1208494
+        ],
+        "sha256": "e43250a6149aabdf6fdb9566b84b62070d0df9e2d56cd62a019df65e84fcb7ca"
+      },
+      "7": {
+        "client_index_sha256": [
+          "adcc6d2b8beec50d624911e8edea894dbfc2f3fc0f8286b1537ce39a5c8a38e3",
+          "9d308883a4df5c89afa0d1dac1ee6dcd94aea7506c9da8adf7d273fee7575a3c",
+          "6a1e9341b83269c91999fcb0963de76ace0c8fd04ded6cb7ef97841ede53c564",
+          "cf1064f5b3d3f5e69da4e2976ada55619365ccf2fa2b40e1e486955dd6ce62bf",
+          "1b569d79ee946941e4efc5fdd9173ee59f9ced8c9a5797cfb90ec91d2cc92c1c",
+          "366a982317d4c1841a1cd63cfb50f45cf91df6e376207d9c2fc0b7be94f70993",
+          "cb301dcc31701c019185ba9b4ea6c42beb15310b4f0744917d8f49f3005bfa42",
+          "b93356bf540841b6d36ed7f79a5bdc26d53fbdaccdcf33d8d0e37a8b5271f0dc",
+          "1ba46de231f1014b5cc1e47d3973f184baf324e1fe677429e66114845135c0b3"
+        ],
+        "client_sizes": [
+          24657,
+          42122,
+          35685,
+          117148,
+          43321,
+          282165,
+          512004,
+          181807,
+          3586783
+        ],
+        "sha256": "43b9931c694a938b74e611235948563d6ac96ed0f7cb56baf79e72d8911ce8f4"
+      }
+    },
+    "N-BaIoT": {
+      "client_index_sha256": [
+        "c7412be8c71fedc1b46b91fc1edae8d7867cbf95e52be6741f5037b44710f77d",
+        "bd21bacd691ebe13fc98e9cbfae62e97f680cee6854ae12baecb3ce68108cb2c",
+        "0d8c2c2cf1c4604319f523a702fbf389e60475653695357a9262380b20d065b6",
+        "13d217edf8425ffe7455d863449ed316779d16efbd89fddbc5e1cc3f34e1d687",
+        "b472d7ce5736e4fb10f1309e298f9bf4c7be30482221698b2f276ccac83677a2",
+        "bf3889fe9c66ba6996c9bc5de2a98b59cb7f278597c0ad0b57d4c648756680ca",
+        "7655dcfb8ff5f5108c6618fd2c96c4dc1760963ff06b79f929052af24c051ed4",
+        "20023b90f9ba4dd488bd070e3a03d231e1093f8bbf6b080082fff0569c1b1085",
+        "5abe1c955141003b435d4721055488bb8de2c73e1831ec81dbdf59db17904e0f"
+      ],
+      "client_sizes": [
+        175931,
+        170558,
+        95875,
+        176014,
+        176083,
+        175901,
+        96007,
+        176174,
+        175569
+      ],
+      "pooled_test_device_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "sha256": "066bf886d4a7c6828d4d8d9cd189c707bbb6cc0132273f480c95039107ba32c3"
+    }
+  },
+  "rev": "q1-e4-r1-ACCEPTED",
+  "scope": {
+    "algorithms": [
+      "FedAvg",
+      "UnweightedFedAvg",
+      "FedTrimmedAvg",
+      "WeightedFedTrimmedAvg"
+    ],
+    "all_seed_reporting_order": [
+      7,
+      42,
+      123,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157
+    ],
+    "anchor_jobs": 48,
+    "blocks": [
+      {
+        "alpha_label": "0.1",
+        "block": "T1",
+        "condition": "alpha=0.1",
+        "dataset": "CIC-IoT2023",
+        "model": "MLP"
+      },
+      {
+        "alpha_label": "0.1",
+        "block": "T2",
+        "condition": "alpha=0.1",
+        "dataset": "CIC-IoT2023",
+        "model": "CNN"
+      },
+      {
+        "alpha_label": "device",
+        "block": "T5",
+        "condition": "device",
+        "dataset": "N-BaIoT",
+        "model": "MLP"
+      },
+      {
+        "alpha_label": "device",
+        "block": "T6",
+        "condition": "device",
+        "dataset": "N-BaIoT",
+        "model": "CNN"
+      }
+    ],
+    "client_index_hash_scheme": "sha256(ordered indices int64_le), no prefix",
+    "combined_jobs": 160,
+    "existing_seeds": [
+      42,
+      123,
+      7
+    ],
+    "job_keys": [
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "127"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "131"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "127"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "131"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "137"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "139"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "137"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "139"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "149"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "151"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "149"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "151"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T1",
+        "CIC-IoT2023",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "UnweightedFedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "FedTrimmedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T2",
+        "CIC-IoT2023",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "alpha=0.1",
+        "157"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "UnweightedFedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "FedTrimmedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T5",
+        "N-BaIoT",
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "UnweightedFedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "FedTrimmedAvg",
+        "device",
+        "157"
+      ],
+      [
+        "T6",
+        "N-BaIoT",
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "device",
+        "157"
+      ]
+    ],
+    "mode": "match_notebook",
+    "new_jobs": 112,
+    "new_seeds": [
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157
+    ],
+    "partition_hash_scheme": "sha256(cid uint64_le || length uint64_le || ordered indices int64_le), cid 0..8, no prefix",
+    "scale_on": "train",
+    "waves": {
+      "0": 4,
+      "1": 28,
+      "2": 32,
+      "3": 32,
+      "4": 16
+    }
+  }
+}

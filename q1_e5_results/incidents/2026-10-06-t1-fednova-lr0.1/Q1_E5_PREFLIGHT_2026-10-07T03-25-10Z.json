@@ -1,0 +1,151 @@
+{
+  "accepted_prereg_sha256": "cd20c7a61b3a41ad214cc51bf4221f7837604fd1236f75282fd07be346ec6517",
+  "bound_hashes": {
+    "fl_local/cic_cache.py": "91a322560c7a4ad3d47ed70dcc70ab2e00f6db134490debc872a35eb6b0760e3",
+    "fl_local/e2_partition.py": "72778f968a03d2f934801b9270e4cdbfeb2759ad7960b20f514e2069c863e8a2",
+    "fl_local/e4_artifacts.py": "f08b15541c48788a30c7d7cfbc485f13e9e03969eb1e7325aa39c2c268c70cd7",
+    "fl_local/engine.py": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+    "fl_local/nbaiot_cache.py": "55e0a136e54bb0759497aae7bcce1402ed9b56149614aaf38c4260b0f7c04693",
+    "probe_results/cache/cic_27bfed227ef77fab.meta.json": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+    "probe_results/cache/cic_27bfed227ef77fab.npz": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+    "probe_results/cache/nbaiot_4ddb8b93b8821650.meta.json": "0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23",
+    "probe_results/cache/nbaiot_4ddb8b93b8821650.npz": "c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854",
+    "q1_e4_results/reporting/Q1_E4_FROZEN_CONFIG.json": "3e78215912fb7e1315c7a133cc964038387a88ee8d73577d14390cca6b28f9be",
+    "q1_e4_results/reporting/q1_e4_seed.csv": "8a9218a130486b68c69f3dd40cf5dd82a217add985c66a91af6fe3dd97da90c9"
+  },
+  "checks": [
+    "bound_hashes",
+    "environment",
+    "cuda_flags",
+    "parser_import",
+    "sealed_array_bytes",
+    "decision_partitions_in_memory"
+  ],
+  "cuda_flags": {
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "matmul_allow_tf32": false
+  },
+  "datasets": {
+    "CIC-IoT2023": {
+      "arrays": {
+        "X_test": {
+          "dtype": "float32",
+          "shape": [
+            1206424,
+            39
+          ]
+        },
+        "X_train": {
+          "dtype": "float32",
+          "shape": [
+            4825692,
+            39
+          ]
+        },
+        "cid_train": {
+          "dtype": "int64",
+          "shape": [
+            4825692
+          ]
+        },
+        "y_test": {
+          "dtype": "int64",
+          "shape": [
+            1206424
+          ]
+        },
+        "y_train": {
+          "dtype": "int64",
+          "shape": [
+            4825692
+          ]
+        }
+      },
+      "byte_equal": true,
+      "cache_key": "27bfed227ef77fab",
+      "excluded": [],
+      "files_read": 309,
+      "files_selected": 309
+    },
+    "N-BaIoT": {
+      "arrays": {
+        "X_test": {
+          "dtype": "float32",
+          "shape": [
+            354529,
+            115
+          ]
+        },
+        "X_train": {
+          "dtype": "float32",
+          "shape": [
+            1418112,
+            115
+          ]
+        },
+        "cid_test": {
+          "dtype": "int64",
+          "shape": [
+            354529
+          ]
+        },
+        "cid_train": {
+          "dtype": "int64",
+          "shape": [
+            1418112
+          ]
+        },
+        "y_test": {
+          "dtype": "int64",
+          "shape": [
+            354529
+          ]
+        },
+        "y_train": {
+          "dtype": "int64",
+          "shape": [
+            1418112
+          ]
+        }
+      },
+      "byte_equal": true,
+      "cache_key": "4ddb8b93b8821650",
+      "excluded": [
+        {
+          "path": "C:\\Elicit_FedTrim_Novelty_Audit\\aoa-dear-i-have-commented-the\\nbaiot_data\\extracted\\demonstrate_structure.csv",
+          "reason": "demonstrate or description"
+        }
+      ],
+      "files_read": 89,
+      "files_selected": 90
+    }
+  },
+  "decision_partitions": {
+    "CIC-IoT2023:127": "d6fbc871d4c6ca1fcd3d3ba9519c5227a78aa317ada71e24640dc38bcd0fdcec",
+    "CIC-IoT2023:131": "2a82f966a94246c04d00f4bf9dafcf05e35c9a8a4022ad93bed721e983855d61",
+    "CIC-IoT2023:137": "d0cf4a3171b3ecc4b7116604e5b5b1fe7e09d0fef9024ea66041554223814167",
+    "CIC-IoT2023:139": "e4d97f11c4b63e93050ba853aacf6d14b3839e428aa4e36eddd372e44a3662ed",
+    "CIC-IoT2023:149": "e98eb725a455d8aa41db6c13852d19b00f65d4e10fd1bd1681694b5b23623160",
+    "CIC-IoT2023:151": "dec1a709d74aba856626f2e3d67083bc2f86c4fe88c42dff57e0af63c9edc7bf",
+    "CIC-IoT2023:157": "9e7a9a32ffe0433cc53d36dd526f8c0872d91c2c4b82780c47ca669326239828",
+    "N-BaIoT:device": "066bf886d4a7c6828d4d8d9cd189c707bbb6cc0132273f480c95039107ba32c3"
+  },
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "gpu_training": false,
+  "kind": "no-training-preflight",
+  "partition_files_written": false,
+  "scalers_written": false,
+  "status": "PASS",
+  "written_utc": "2026-10-07T03:25:10Z"
+}

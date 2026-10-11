@@ -1,0 +1,9 @@
+TrueClassID,TrueClass,benign,bruteforce,ddos,dos,mirai,recon,spoofing,web
+0,benign,305,14386,0,0,0,496,813,0
+1,bruteforce,4,2463,0,0,0,42,104,0
+2,ddos,6,203,279003,420256,1478,21,10,0
+3,dos,1,21,4,151946,21,5,2,0
+4,mirai,0,20,40,858,300469,0,29,0
+5,recon,43,9336,0,6,0,6539,523,5
+6,spoofing,8,5515,0,5,0,183,6289,0
+7,web,19,4011,0,1,0,395,540,0

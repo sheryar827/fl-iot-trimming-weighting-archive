@@ -1,0 +1,30 @@
+{
+  "generated_utc": "2026-08-15T06:31:25.096367+00:00",
+  "builder": "Research Paper/_build_q1_e1b_three_primary_packet.py",
+  "arm": "WeightedFedTrimmedAvg",
+  "n_seed_rows": 36,
+  "n_mean_rows": 12,
+  "iid_included": false,
+  "comparators": [
+    "FedAvg",
+    "FedProx",
+    "FedTrimmedAvg",
+    "UnweightedFedAvg"
+  ],
+  "lineage_note": "WT produced with engine after 2026-08-12 rewrite. Shared-path re-gate STRONG PASS 2026-08-15 (N-BaIoT MLP FedAvg a1.0 s42; verify_nbaiot_mlp_fedavg_gate.py exit 0; history bit-identical to published).",
+  "gate": {
+    "cell": "N-BaIoT MLP FedAvg a1.0 s42 match_notebook",
+    "probe_json": "probe_results/probe_fast_match_notebook.json",
+    "pre_engine_backup": "probe_results/probe_fast_match_notebook_PRE_ENGINE_2026-08-02.json",
+    "verified_utc": "2026-08-15",
+    "verdict": "STRONG_PASS",
+    "scope": "shared path + aggregate_fedavg_np only"
+  },
+  "f3_policy": "descriptive only at n=3; no UW/E1b multiplicity-corrected significance",
+  "files": {
+    "seed": "q1_e1b_wt_three_primary_seed.csv",
+    "seed_mean": "q1_e1b_wt_three_primary_seed_mean.csv",
+    "packet_md": "Q1_E1b_Three_Primary_Packet.md",
+    "checksums": "SHA256SUMS.txt"
+  }
+}

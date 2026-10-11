@@ -1,0 +1,27 @@
+{
+  "built_utc": "2026-09-21T07:54:50.955452+00:00",
+  "n_core_cells": 48,
+  "n_raw_rows": 49,
+  "cache_key": "27bfed227ef77fab",
+  "scale_on": "train",
+  "hc1": {
+    "MLP_a0.5": "yes",
+    "MLP_a0.1": "yes",
+    "CNN_a0.5": "yes",
+    "CNN_a0.1": "yes"
+  },
+  "htrim": {
+    "MLP_a0.5": "yes",
+    "MLP_a0.1": "yes",
+    "CNN_a0.5": "yes",
+    "CNN_a0.1": "yes"
+  },
+  "hweight": {
+    "MLP_a0.5": "yes",
+    "MLP_a0.1": "yes",
+    "CNN_a0.5": "yes",
+    "CNN_a0.1": "yes"
+  },
+  "wave3": "not run",
+  "auc_note": "AUC column is mean round-wise macro-F1, not ROC-AUC"
+}

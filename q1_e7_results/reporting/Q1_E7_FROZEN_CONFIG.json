@@ -1,0 +1,360 @@
+{
+  "accepted": {
+    "approver": "Dr Hussain Kazmi",
+    "date": "2026-09-23",
+    "proposer": "Sheryar Kiani"
+  },
+  "baseline": {
+    "anchor_csv": "q1_e7_results/reporting/Q1_E7_BASELINE_ANCHORS.csv",
+    "anchor_sha256": "e43f8e7eebf4f536c691dcc84c93ee9fae36e7b8c7bfe630a79683624718d3e0",
+    "rows": 24,
+    "selection": "exact alpha=0.1, both models, four arms, seeds 42/123/7",
+    "source_raw": "q1_cic_conf_results/csv/q1_cic_conf_raw.csv"
+  },
+  "cache": {
+    "from_existing_only": true,
+    "key": "27bfed227ef77fab",
+    "meta": "probe_results/cache/cic_27bfed227ef77fab.meta.json",
+    "meta_num_classes": 8,
+    "meta_num_features": 39,
+    "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+    "npz": "probe_results/cache/cic_27bfed227ef77fab.npz",
+    "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+    "scale_on": "train",
+    "y_test_int64_sha256": "d86367f69d6f718df19be4b806e11e7ab43d5d069875dad0f56b9cbc2aa9261d",
+    "y_test_uint8_sha256": "fe4ceccf96058485d6896e2a27b4aba0d5950f686a54fc2f53451535e3c408d6",
+    "y_train_int64_sha256": "ad64b239410ceba5db74f43338873aecd4d9370a99f067ac900124b699351830"
+  },
+  "cfg": {
+    "batch_size": 512,
+    "dirichlet_alphas": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "fedprox_mu": 0.01,
+    "local_epochs": 3,
+    "lr": 0.001,
+    "max_samples_per_file": 20000,
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "num_clients": 9,
+    "num_rounds": 30,
+    "optimizer": "adam",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "sgd_momentum": 0.9,
+    "test_fraction": 0.2,
+    "trimmed_fraction": 0.1
+  },
+  "classes": {
+    "names": [
+      "benign",
+      "bruteforce",
+      "ddos",
+      "dos",
+      "mirai",
+      "recon",
+      "spoofing",
+      "web"
+    ],
+    "supports": [
+      16000,
+      2613,
+      700977,
+      152000,
+      301416,
+      16452,
+      12000,
+      4966
+    ]
+  },
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "file_sha256": {
+    "fl_local/PREPROCESS_PROTOCOL.md": "4ce920836705e7a6ad001824d92996c75bdba9bcf5af495965edc4031759425f",
+    "fl_local/__init__.py": "827ff0691073c5478ad5d0d31522ac665d2f75cd33bf1356f4d7e3260c38d396",
+    "fl_local/cic_cache.py": "91a322560c7a4ad3d47ed70dcc70ab2e00f6db134490debc872a35eb6b0760e3",
+    "fl_local/e7_artifacts.py": "e0b27ac2c997d1a47a797564bc6fa6bfb775085c382ab86f1c0c09dbc3c4ae78",
+    "fl_local/e7_capture.py": "91dfa8b891e1f1ccbb55ac6601d219bddd6858f449851da72e170865bf6a4d57",
+    "fl_local/engine.py": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+    "q1_cic_conf_results/reporting/Q1_CIC_CONFIRMATORY_CACHE_PROVENANCE.json": "444a25c446921703199153e467149593368e4d86185fcc5e7623ae31bc4b90ce",
+    "q1_cic_conf_results/reporting/Q1_CIC_CONFIRMATORY_FROZEN_CONFIG.json": "fb8623f085e944493840e561c4765c606177e3223a3addca58b4700429db2d2c",
+    "q1_e7_results/reporting/Q1_E7_PREREG_DRAFT.md": "273a0ee7f32400be2ea0d1c8d7885345cf445dfef0f821a091a2a1d94796d5e6",
+    "run_q1_cic_confirmatory.py": "7e7889c5a2260c95292711464070cf98493eadad57c7328bb28383acae8ad6d9",
+    "run_q1_e7_cic.py": "ccff04415a4d53a3c470fe025eea2154508a8edcabc8259af97fc97838023970",
+    "tools/build_q1_e7_frozen_config.py": "70436172987a8a8ea8f4551f23e3ec8cf950352da385908761d3f164789463a5",
+    "tools/test_q1_e7_integrity.py": "f92da44af9218b8f60bfe10b92e5e6992961a726f8839120fa4bbdaa6a92bee5"
+  },
+  "partitions": {
+    "123": {
+      "client_index_sha256": [
+        "f096185bce4c801630dc16f0c5c0007cf41ebfa47de010e29bcccb1216f2cedf",
+        "874a53da1345fd34722fb17ab607ac347101493b0a8d6f30c119acf3211e434e",
+        "782f1182248d29dcacc5694b3e051581ffdbbfcd9a3ab1026b0a349764cc9284",
+        "532e0ed0c9630b8afcee18b06666c7c55036c968f16b84c56939831e50c0123a",
+        "fbedf043a98f03efa3eb3b20edbc91d7cc1e52788b73a4175d8b66534acfde12",
+        "108642353ecd9d4d45d8da25fec776d39ef83bfb3bee52b5362cc4dd972835e6",
+        "38802c0ac4e08fc63bfe9810e9593371979e11bf91f5dd1e0b6c6c3a485873da",
+        "cf55697d09f9a36d24cb66ddcc016b7e58e04bec118165e2d00dc6034cab7dec",
+        "0914b0134f38093b9fe079e08a5a15464102e1c7cf0a5f1b793e2058a8ec45d0"
+      ],
+      "client_sizes": [
+        295771,
+        98232,
+        89579,
+        166924,
+        73376,
+        358193,
+        479245,
+        2963583,
+        300789
+      ],
+      "sha256": "74e689e01bb04bb3506dcfabb66bf036b8be2cfaaf9f2a852326ee63274df03a"
+    },
+    "42": {
+      "client_index_sha256": [
+        "b59de27dfc060f6040b3c6efc28ab1f241dbe1fd11ef8fa0a789e29f6df54135",
+        "20d98d19aada0ff4340f4052898c37fffec22c222492521d7d34b2b59fedd22b",
+        "202722dd0ad0392363387218eef300601090f1d207325226926883718dcd5e4e",
+        "34c58a836317e204bc6aeb1adace03023be9f89223ecc17a68e4de7dbc1c7624",
+        "1c82e964f2c2523a3c6429fd94f568a924a345b748236f1f554b4e3d84a7a24e",
+        "867edea8fbc68b21d7c7599c3fb5c27d8c98083efcd34a8119f0ecb3c5507bb3",
+        "971674f64c1f74fe410a2785a3ed29e34db5b87f29115e05d06029bd23736b07",
+        "186db17d30823ff3770278d83ec4072e31a7860fc5236d99c2962d671da39081",
+        "1707a7f8da3fad2d99582251db6b476fe9342c0fba97c2cd11db6b3482d24658"
+      ],
+      "client_sizes": [
+        390284,
+        803016,
+        14218,
+        278396,
+        8466,
+        121015,
+        1509335,
+        492468,
+        1208494
+      ],
+      "sha256": "e43250a6149aabdf6fdb9566b84b62070d0df9e2d56cd62a019df65e84fcb7ca"
+    },
+    "7": {
+      "client_index_sha256": [
+        "adcc6d2b8beec50d624911e8edea894dbfc2f3fc0f8286b1537ce39a5c8a38e3",
+        "9d308883a4df5c89afa0d1dac1ee6dcd94aea7506c9da8adf7d273fee7575a3c",
+        "6a1e9341b83269c91999fcb0963de76ace0c8fd04ded6cb7ef97841ede53c564",
+        "cf1064f5b3d3f5e69da4e2976ada55619365ccf2fa2b40e1e486955dd6ce62bf",
+        "1b569d79ee946941e4efc5fdd9173ee59f9ced8c9a5797cfb90ec91d2cc92c1c",
+        "366a982317d4c1841a1cd63cfb50f45cf91df6e376207d9c2fc0b7be94f70993",
+        "cb301dcc31701c019185ba9b4ea6c42beb15310b4f0744917d8f49f3005bfa42",
+        "b93356bf540841b6d36ed7f79a5bdc26d53fbdaccdcf33d8d0e37a8b5271f0dc",
+        "1ba46de231f1014b5cc1e47d3973f184baf324e1fe677429e66114845135c0b3"
+      ],
+      "client_sizes": [
+        24657,
+        42122,
+        35685,
+        117148,
+        43321,
+        282165,
+        512004,
+        181807,
+        3586783
+      ],
+      "sha256": "43b9931c694a938b74e611235948563d6ac96ed0f7cb56baf79e72d8911ce8f4"
+    }
+  },
+  "rev": "q1-e7-r1-ACCEPTED",
+  "scope": {
+    "algorithms": [
+      "FedAvg",
+      "UnweightedFedAvg",
+      "FedTrimmedAvg",
+      "WeightedFedTrimmedAvg"
+    ],
+    "alpha": 0.1,
+    "client_index_hash_scheme": "sha256(ordered indices int64_le), no prefix",
+    "dataset": "CIC-IoT2023",
+    "job_keys": [
+      [
+        "MLP",
+        "FedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "MLP",
+        "UnweightedFedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "MLP",
+        "FedTrimmedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "CNN",
+        "FedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "CNN",
+        "UnweightedFedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "CNN",
+        "FedTrimmedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "42"
+      ],
+      [
+        "MLP",
+        "FedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "MLP",
+        "UnweightedFedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "MLP",
+        "FedTrimmedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "CNN",
+        "FedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "CNN",
+        "UnweightedFedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "CNN",
+        "FedTrimmedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "123"
+      ],
+      [
+        "MLP",
+        "FedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "MLP",
+        "UnweightedFedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "MLP",
+        "FedTrimmedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "MLP",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "CNN",
+        "FedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "CNN",
+        "UnweightedFedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "CNN",
+        "FedTrimmedAvg",
+        "0.1",
+        "7"
+      ],
+      [
+        "CNN",
+        "WeightedFedTrimmedAvg",
+        "0.1",
+        "7"
+      ]
+    ],
+    "jobs": 24,
+    "mode": "match_notebook",
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "n_test": 1206424,
+    "n_train": 4825692,
+    "num_classes": 8,
+    "num_features": 39,
+    "partition_hash_scheme": "sha256(cid uint64_le || length uint64_le || ordered indices int64_le), cid 0..8, no prefix",
+    "scale_on": "train",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "waves": {
+      "0": 1,
+      "1": 7,
+      "2": 16
+    }
+  },
+  "written_utc": "2026-09-23T13:28:32.808969+00:00"
+}

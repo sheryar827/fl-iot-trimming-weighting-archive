@@ -1,0 +1,5 @@
+dataset,model,features,classes,parameters
+CIC-IoT2023,MLP,39,8,20456
+CIC-IoT2023,CNN,39,8,8808
+N-BaIoT,MLP,115,11,30283
+N-BaIoT,CNN,115,11,8907

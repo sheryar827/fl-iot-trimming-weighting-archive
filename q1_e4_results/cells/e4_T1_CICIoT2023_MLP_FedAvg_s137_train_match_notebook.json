@@ -1,0 +1,74 @@
+{
+  "artifact_sha256": {
+    "q1_e4_results/csv/history_e4_T1_CICIoT2023_MLP_FedAvg_s137_train_match_notebook.csv": "ec21332fad49fa18c2a43d78a39f7957c98790615f618901b6d9b580862fb16c"
+  },
+  "cache": {
+    "key": "27bfed227ef77fab",
+    "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+    "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38"
+  },
+  "cfg": {
+    "batch_size": 512,
+    "dirichlet_alphas": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "fedprox_mu": 0.01,
+    "local_epochs": 3,
+    "lr": 0.001,
+    "max_samples_per_file": 20000,
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "num_clients": 9,
+    "num_rounds": 30,
+    "optimizer": "adam",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "sgd_momentum": 0.9,
+    "test_fraction": 0.2,
+    "trimmed_fraction": 0.1
+  },
+  "engine_sha256": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "finished_utc": "2026-09-29T10:29:19.507473+00:00",
+  "format": "q1-e4-cell-v1",
+  "frozen_config_sha256": "3e78215912fb7e1315c7a133cc964038387a88ee8d73577d14390cca6b28f9be",
+  "job": [
+    "T1",
+    "CIC-IoT2023",
+    "MLP",
+    "FedAvg",
+    "alpha=0.1",
+    "137"
+  ],
+  "metrics": {
+    "AUC": 0.45263633423765004,
+    "Best_Acc": 0.8699802059640723,
+    "Best_F1": 0.49208972058804146,
+    "Final_Acc": 0.869489499545765,
+    "Final_F1": 0.48570898187543765
+  },
+  "mode": "match_notebook",
+  "partition_sha256": "d0cf4a3171b3ecc4b7116604e5b5b1fe7e09d0fef9024ea66041554223814167",
+  "preflight_sha256": "4a0c68844e76e709e4da0ab8572d0eab893b24d87243b51ae1114454f301d037",
+  "prereg_sha256": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+  "scale_on": "train",
+  "started_utc": "2026-09-29T08:47:49.583779+00:00",
+  "train_s": 6089.9089580000145,
+  "wave": 2
+}

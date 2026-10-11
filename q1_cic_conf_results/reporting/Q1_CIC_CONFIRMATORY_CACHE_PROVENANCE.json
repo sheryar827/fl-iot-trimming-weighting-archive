@@ -1,0 +1,22 @@
+{
+  "written_utc": "2026-09-12T11:52:49.138757+00:00",
+  "cache_key": "27bfed227ef77fab",
+  "scale_on": "train",
+  "npz": "C:/Elicit_FedTrim_Novelty_Audit/aoa-dear-i-have-commented-the/Research Paper/probe_results/cache/cic_27bfed227ef77fab.npz",
+  "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+  "meta_json": "C:/Elicit_FedTrim_Novelty_Audit/aoa-dear-i-have-commented-the/Research Paper/probe_results/cache/cic_27bfed227ef77fab.meta.json",
+  "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+  "from_cache": false,
+  "versions": {
+    "python": "3.12.10",
+    "torch": "2.5.1+cu121",
+    "cuda_available": true,
+    "cuda": "12.1",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "sklearn": "1.8.0",
+    "gpu": "Quadro P3200"
+  },
+  "raw_csv": "q1_cic_conf_results/csv/q1_cic_conf_raw.csv",
+  "raw_csv_exists": false
+}

@@ -1,0 +1,73 @@
+{
+  "artifact_sha256": {
+    "q1_e7_results/checkpoints/cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.json": "b69cd7b2611b157481d0a5ecaada8620c011752c694e39b709760592c1b54370",
+    "q1_e7_results/checkpoints/cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.npz": "63d08574525e424b12b5d4fc1a5b97f5a7645900a18a6712301edf2e3bedc1a6",
+    "q1_e7_results/csv/history_cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.csv": "0205d1f8a11d4cd492f5b61e366f53b11049b6c4de67242b4ea6e823f0cc513b",
+    "q1_e7_results/metrics/confusion_raw_cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.csv": "399c54085c16bf43d1788999351880763908c88b6411c2261d67138d82339654",
+    "q1_e7_results/metrics/confusion_rownorm_cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.csv": "31eb57c2cc1d34fff3d791858add6855e82e8511c9d2d03912a8b6db438f2695",
+    "q1_e7_results/metrics/per_class_cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.csv": "98452e5d47c93bf22322c119fd2f05aa080b0436eb21f56ea241fc4eff0a8c8b",
+    "q1_e7_results/predictions/y_pred_cic_e7_CNN_WeightedFedTrimmedAvg_a0p1_s42_train_match_notebook.npy": "fa39ba3dbb7cfd8ddc2e88b07e5c08b57bb4ce93e0c4b7cce34ba0a6540ff38f"
+  },
+  "cache_key": "27bfed227ef77fab",
+  "cell_key": [
+    "CNN",
+    "WeightedFedTrimmedAvg",
+    "0.1",
+    "42"
+  ],
+  "cfg": {
+    "batch_size": 512,
+    "dirichlet_alphas": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "fedprox_mu": 0.01,
+    "local_epochs": 3,
+    "lr": 0.001,
+    "max_samples_per_file": 20000,
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "num_clients": 9,
+    "num_rounds": 30,
+    "optimizer": "adam",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "sgd_momentum": 0.9,
+    "test_fraction": 0.2,
+    "trimmed_fraction": 0.1
+  },
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "eval_calls": 31,
+  "finished_utc": "2026-09-24T19:09:05.176839+00:00",
+  "format": "q1-e7-cell-v1",
+  "frozen_config_sha256": "79a348a20c8409ea94831761b09979dc2a1b36df01216718c878c215c9e2fbeb",
+  "meta_sha256": "e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4",
+  "mode": "match_notebook",
+  "npz_sha256": "8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38",
+  "partition_sha256": "e43250a6149aabdf6fdb9566b84b62070d0df9e2d56cd62a019df65e84fcb7ca",
+  "reconstructed_final_acc": 0.8766171760508743,
+  "reconstructed_final_f1": 0.46398516630715514,
+  "reference_final_acc": 0.8766171760508743,
+  "reference_final_f1": 0.46398516630715514,
+  "scale_on": "train",
+  "started_utc": "2026-09-24T16:45:21.287823+00:00",
+  "train_s": 8612.039420100002,
+  "wave": 1,
+  "y_true_path": "q1_e7_results/predictions/y_true_uint8.npy",
+  "y_true_sha256": "549952865e2c5b99fcd67c52a5e53d4f9261da2bebf360f3077167316efafaea"
+}

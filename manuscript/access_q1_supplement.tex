@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{url}
+\usepackage[T1]{fontenc}
+\title{Supplementary governance note\\for the trimming and client-size weighting study}
+\author{Sheryar Kiani\\2504142@students.au.edu.pk
+\and Saad Farooq\\2504108@students.au.edu.pk}
+\date{11 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent This note records study identifiers, approval dates, checksums, and the deferred FedNova stop for the accompanying article. It is not a journal article, not an approval signature, and not a statement that the article has been submitted or accepted. The scientific decisions are in the article. ORCID identifiers, funding sources, and conflict-of-interest statements were not supplied.
+\end{abstract}
+
+\section{People and scope}
+The article authors are Sheryar Kiani, corresponding author, and Saad Farooq, both M.S.\ students in the Department of Cyber Security, Air University, Islamabad. The experimental amendments name Dr Hussain Kazmi as approver. He is not an author of the article. This note does not add a signature from him.
+
+The article was revised on 11 October 2026 for an SJR-Q1, IEEE Access-style submission. No new model was trained for that revision. The parent preregistration, the training engine, the partition code, the sealed result packets, the IEEE class file, and the legacy template \texttt{access.tex} were not edited. No new version of the May 2026 Zenodo snapshot was minted.
+
+\section{Identifier map}
+The article uses plain names. The laboratory record uses the identifiers below.
+\begin{itemize}
+\item Three-seed CIC-IoT2023 confirmatory grid: 48 cells, Dirichlet $\alpha\in\{0.5,0.1\}$, seeds $\{42,123,7\}$. Descriptive directional rules only.
+\item Three-seed N-BaIoT device block: 24 cells on the nine source-device clients. Descriptive directional rules only.
+\item Seven-seed family, recorded as Q1-E4 and closed on 5 October 2026: 112 cells on blocks T1, T2, T5, and T6. The seeds are 127, 131, 137, 139, 149, 151, and 157. The preregistered paired-$t$ Holm decision supports only T2, size-weighted FedAvg minus unweighted FedAvg. The other 15 comparisons are inconclusive. Neither complete hypothesis is supported.
+\item Coordinate-wise median comparison, recorded as Q1-E5. An eight-test plan was accepted on 6 October 2026 at 0 decision cells. On 7 October 2026 the accepted continuation was the 28-cell coordinate-wise median comparison alone. That comparison was closed on 10 October 2026. All four Holm tests are inconclusive. No equivalence procedure was applied.
+\item Per-class display, recorded as Q1-E7: 24 descriptive CIC cells at $\alpha=0.1$, seeds $\{42,123,7\}$. It is not a rare-class claim.
+\item Conceptual bridge, recorded as Q1-E6: not a theorem and not an attack result.
+\item Still deferred: FedNova, a further CIC wave, and an adversarial-client study recorded as Q1-E8. Reopening any of them requires a dated amendment. SCAFFOLD is not an arm.
+\end{itemize}
+
+\section{FedNova stop}
+The 6 October 2026 plan included a FedNova comparison against a matched momentum-SGD FedAvg control. During the T1 learning-rate search, the CIC-IoT2023 multilayer perceptron, FedNova, momentum SGD, learning rate 0.1, seed 10007, produced a non-finite client update. A recovery run approved on 7 October 2026 reproduced that non-finite update. The prespecified rule stopped the search and did not allow a rate to be chosen from the cells that finished. No FedNova decision cell was run. The informational stop record was not signed. The continuation that was accepted is the 28-cell median comparison. FedNova remains deferred, so its accuracy on these blocks is unmeasured.
+
+The incident note was not edited for this submission. Its SHA-256, verified again for this note, is
+
+{\footnotesize\ttfamily 17a7b49d1db8efef8263d2e46ae012a21ad39b84ad63cc8dda3460423272534a}
+
+\section{Checksums verified on 11 October 2026}
+The preregistration file \texttt{q1\_e5\_results/Q1\_E5\_PREREG\_DRAFT.md} was hashed again and still matches the accepted SHA-256 below. The presented-before-acceptance hash is a different historical value and is not the current file hash.
+
+{\footnotesize\ttfamily cd20c7a61b3a41ad214cc51bf4221f7837604fd1236f75282fd07be346ec6517}
+
+The processed feature matrices used by the leakage audit and the partition check are:
+\begin{itemize}
+\item \texttt{cic\_27bfed227ef77fab.npz}, 170,407,946 bytes.\\
+{\footnotesize\ttfamily 8f032df1760a895b2358b8ff2da71491b09820c7af8c097dd00465fd7b981b38}\\
+Metadata SHA-256 {\footnotesize\ttfamily e5e0ef795fff100af24f6813ca3a2a61442e386aa01bf92878a9cfc0b03cb3b4}.
+\item \texttt{nbaiot\_4ddb8b93b8821650.npz}, 243,513,210 bytes.\\
+{\footnotesize\ttfamily c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854}\\
+Metadata SHA-256 {\footnotesize\ttfamily 0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23}.
+\end{itemize}
+Each matrix exceeds the 100~MB git file limit, so neither file is stored as a git blob. The per-seed partition files in the archive are smaller and are included.
+
+\section{Two different time quantities}
+The article reports 171.954 hours of stored training time across the 112 seven-seed cells, from the \texttt{train\_s} field. It also reports 42.066 hours of elapsed wall-clock time for the 28 median cells, from each cell's stored start to its stored finish.
+
+The sealed planning figure for the median comparison is a different quantity: exact mean 42.988554875486145 hours, reported as 42.99, and exact maximum 45.850877955749894 hours, reported as 45.85. That planning figure is not the 42.066-hour elapsed sum, and the elapsed sum does not replace it.
+
+\section{Exact sign-flip sensitivity}
+For each of the 16 seven-seed contrasts, the statistic is the absolute sum of the seven paired Final macro-F1 differences. All 128 sign assignments are treated as equally likely. The two-sided $p$-value is the fraction of assignments whose absolute sum is at least as large as the observed absolute sum. Holm adjustment across the 16 exact $p$-values supports no comparison. With seven nonzero differences the smallest such $p$-value is $2/128$, and $16\times 2/128=0.25$, so this exact family cannot reach a $0.05$ Holm threshold. The preregistered paired-$t$ Holm decision remains the official result.
+
+\section{Public archive and data acquisition}
+The archive is \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. It contains the result tables, cell records, manifests, partition files that fit the git limit, figure code, and the article source. It does not contain the two processed matrices named above, the raw corpora, or the tuning matrices.
+
+CIC-IoT2023 is the public corpus introduced by Neto \emph{et al.}, \emph{Sensors}, 2023. N-BaIoT is the public corpus introduced by Meidan \emph{et al.}, \emph{IEEE Pervasive Computing}, 2018. The processed caches cap each source file at 20,000 rows, use a stratified split with seed 42, and fit a standard scaler on the pooled training matrix only.
+
+The earlier three-arm lineage remains at the address below. The concept DOI 10.5281/zenodo.20456827 resolves to the immutable v1.0.0 record 10.5281/zenodo.20456828, published on 30 May 2026. That record was not versioned again for this article.
+
+\begin{flushleft}
+\url{https://github.com/sheryar827/fl-iot-botnet-nbaiot-cic-iot2023}
+\end{flushleft}
+
+\section{Items the authors still need to supply before upload}
+ORCID identifiers were not supplied. No funding source was supplied. No conflict-of-interest statement was supplied. IEEE assigns the history line, the DOI, the volume, and the year after acceptance. None of those values is invented in the article. The article has not been submitted and has not been accepted.
+\end{document}

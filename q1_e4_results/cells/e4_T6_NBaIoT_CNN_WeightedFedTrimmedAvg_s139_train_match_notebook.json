@@ -1,0 +1,74 @@
+{
+  "artifact_sha256": {
+    "q1_e4_results/csv/history_e4_T6_NBaIoT_CNN_WeightedFedTrimmedAvg_s139_train_match_notebook.csv": "c7a47ab676bde6944999b976a0eb27389030af52f4c84242b7ab7a8ee6106e6f"
+  },
+  "cache": {
+    "key": "4ddb8b93b8821650",
+    "meta_sha256": "0124ac4c793417d53bd062f4694e72ba903ed42beee8873d578adf57a3686b23",
+    "npz_sha256": "c0a1e21cd6336d3a090e5feb9411758abbf8669dcca01bd476defdbcf8380854"
+  },
+  "cfg": {
+    "batch_size": 512,
+    "dirichlet_alphas": [
+      1.0,
+      0.5,
+      0.1
+    ],
+    "fedprox_mu": 0.01,
+    "local_epochs": 3,
+    "lr": 0.001,
+    "max_samples_per_file": 20000,
+    "models": [
+      "MLP",
+      "CNN"
+    ],
+    "num_clients": 9,
+    "num_rounds": 30,
+    "optimizer": "adam",
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "sgd_momentum": 0.9,
+    "test_fraction": 0.2,
+    "trimmed_fraction": 0.1
+  },
+  "engine_sha256": "7d201f9734b56c29457cd028933b0eca4862e241b17040e1cb6e88c6b0f130d2",
+  "environment": {
+    "cuda": "12.1",
+    "cuda_available": true,
+    "gpu": "Quadro P3200",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "python": "3.12.10",
+    "sklearn": "1.8.0",
+    "torch": "2.5.1+cu121"
+  },
+  "finished_utc": "2026-10-01T08:54:35.255585+00:00",
+  "format": "q1-e4-cell-v1",
+  "frozen_config_sha256": "3e78215912fb7e1315c7a133cc964038387a88ee8d73577d14390cca6b28f9be",
+  "job": [
+    "T6",
+    "N-BaIoT",
+    "CNN",
+    "WeightedFedTrimmedAvg",
+    "device",
+    "139"
+  ],
+  "metrics": {
+    "AUC": 0.7280053533065517,
+    "Best_Acc": 0.8572979925478593,
+    "Best_F1": 0.8325809507374072,
+    "Final_Acc": 0.8572979925478593,
+    "Final_F1": 0.8325809507374072
+  },
+  "mode": "match_notebook",
+  "partition_sha256": "066bf886d4a7c6828d4d8d9cd189c707bbb6cc0132273f480c95039107ba32c3",
+  "preflight_sha256": "4a0c68844e76e709e4da0ab8572d0eab893b24d87243b51ae1114454f301d037",
+  "prereg_sha256": "b652488e3cdfa68d518e1884a4fa3e67246392e29e03fcd39e632299858c9465",
+  "scale_on": "train",
+  "started_utc": "2026-10-01T07:26:50.891536+00:00",
+  "train_s": 5264.343730899971,
+  "wave": 2
+}

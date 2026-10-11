@@ -1,0 +1,121 @@
+{
+  "generated_utc": "2026-08-09T09:11:14.452192+00:00",
+  "builder": "Research Paper/_build_q1_e1_three_primary_packet.py",
+  "scope": {
+    "protocol": "Q1-E1 UnweightedFedAvg vs published FedAvg, FedProx, FedTrimmedAvg (+ best rival)",
+    "primary_metrics": [
+      "Final_Acc",
+      "Final_F1 (macro)",
+      "AUC = mean macro-F1 over 30 FL rounds"
+    ],
+    "secondary_metrics_in_seed_csv": [
+      "uw_Best_Acc",
+      "uw_Best_F1"
+    ],
+    "blocks": [
+      "N-BaIoT MLP",
+      "N-BaIoT CNN",
+      "CIC-IoT2023 MLP",
+      "CIC-IoT2023 CNN"
+    ],
+    "alphas": [
+      "1.0",
+      "0.5",
+      "0.1"
+    ],
+    "seeds": [
+      42,
+      123,
+      7
+    ],
+    "n_uw_runs": 36,
+    "iid_included": false,
+    "iid_resolution": "Non-IID only (\u03b1\u2208{1.0,0.5,0.1}). No UW-IID runs. Published FA/Prox/FT IID rows in Corrected_Results_Packet are not UW comparators and must not be pooled into UW margins. Full grid including IID requires 12 UW-IID cells + amendment before claim."
+  },
+  "provenance": {
+    "uw": "local match_notebook q1_e1_*_raw.csv + history_{cic|nbaiot}_* UnweightedFedAvg files",
+    "fa_prox_ft": "published all_runs_raw.csv + history_* (cross-hardware except local FA gates)",
+    "best_rival_definition": "For each endpoint separately, best_rival = argmax among {FedAvg, FedProx, FedTrimmedAvg} on that endpoint",
+    "local_fa_gates_bitexact": [
+      "N-BaIoT MLP FedAvg a1.0 s42",
+      "CIC MLP FedAvg a1.0 s42",
+      "N-BaIoT CNN FedAvg a1.0 s42",
+      "CIC CNN FedAvg a1.0 s42"
+    ],
+    "cache_keys": {
+      "N-BaIoT": "a9dd0c758635aebe",
+      "CIC-IoT2023": "b725017696446067"
+    },
+    "n_baIoT_filter": "UnweightedFedAvg + match_notebook + complete Final_Acc/Final_F1/AUC; exclude incomplete legacy FedAvg row",
+    "canonical_packet_input_histories": {
+      "uw": 36,
+      "published_fa_prox_ft": 108,
+      "total": 144,
+      "note": "Canonical packet-input histories: 36 UW + 108 published (FA/Prox/FT) = 144 total (published = 36 UW cells \u00d7 3 arms). Prefer this count over all history files on disk."
+    }
+  },
+  "flip_counts": {
+    "seed_level_Final_F1_vs_AUC_FA_or_FT_only": {
+      "denominator": "36 cells \u00d7 2 comparators (FA, FT) = 72",
+      "n_flips": 14,
+      "by_block_explicit_zeros": {
+        "N-BaIoT MLP": 6,
+        "N-BaIoT CNN": 7,
+        "CIC-IoT2023 MLP": 1,
+        "CIC-IoT2023 CNN": 0
+      }
+    },
+    "seed_mean_Final_F1_vs_AUC_FA_or_FT_only": {
+      "denominator": "12 configs \u00d7 2 comparators (FA, FT) = 24",
+      "n_flips": 5,
+      "by_block_explicit_zeros": {
+        "N-BaIoT MLP": 1,
+        "N-BaIoT CNN": 4,
+        "CIC-IoT2023 MLP": 0,
+        "CIC-IoT2023 CNN": 0
+      }
+    },
+    "seed_level_including_Prox": {
+      "denominator": "36 \u00d7 3 = 108",
+      "n_flips": 19
+    },
+    "seed_mean_including_Prox": {
+      "denominator": "12 \u00d7 3 = 36",
+      "n_flips": 5
+    },
+    "highlighted": {
+      "CIC_CNN_seed_level_FA_FT_flips": "0/18",
+      "NBaIoT_CNN_seed_mean_FA_FT_flips": "4/6"
+    }
+  },
+  "examples": {
+    "CIC_CNN_a1.0_UW_minus_FT_Final_F1_pp": -0.0816656032244345,
+    "CIC_CNN_a1.0_UW_minus_FT_AUC_pp": -0.17011021402002502,
+    "CIC_MLP_a0.1_best_rival_Final_Acc": "FedProx",
+    "CIC_MLP_a0.1_UW_minus_best_rival_Final_Acc_pp": -2.3962001198030825
+  },
+  "f3_policy": {
+    "n_seeds": 3,
+    "significance_after_multiplicity": "forbidden for superiority claims (F3)",
+    "reporting": "descriptive means, margins (pp), labelled sign counts only; no UW Welch/paired/Holm/BH/TOST and no exploratory UW p-values under this freeze; any UW inference requires a separate dated amendment that freezes the family first",
+    "c8": "frozen 0/36 vs 7/72; do not fold UW cells into that table",
+    "uw_inferential_tests": "none under this freeze"
+  },
+  "notes": [
+    "CIC CNN \u03b1=1.0 UW\u2212FT seed-mean Final F1 is a small observed difference (-0.0817 pp), AUC (-0.1701 pp); not an equivalence claim at n=3.",
+    "Margins in pp = 100 \u00d7 (UW \u2212 baseline) on the probability scale [0,1].",
+    "Best_Acc / Best_F1 for UW are secondary diagnostics stored in the seed-level CSV (uw_Best_Acc, uw_Best_F1), recomputed from 30-round histories.",
+    "Contract \u00a74 margins: always report vs FedAvg and vs best_rival_* columns (best rival may be FedProx)."
+  ],
+  "files": {
+    "seed_level_csv": "q1_e1_uw_three_primary_seed.csv",
+    "seed_mean_csv": "q1_e1_uw_three_primary_seed_mean.csv",
+    "flips_seed_level_csv": "q1_e1_uw_f1_auc_flips_seed_level.csv",
+    "flips_seed_mean_csv": "q1_e1_uw_f1_auc_flips_seed_mean.csv",
+    "summary_json": "q1_e1_uw_three_primary_summary.json",
+    "packet_md": "Q1_E1_Three_Primary_Packet.md",
+    "amendment_draft": "Q1_E1_AMENDMENT_DRAFT_UW_family_and_status.md",
+    "amendment_template": "Q1_E1_AMENDMENT_DRAFT_UW_family_and_status.TEMPLATE.md",
+    "checksums": "SHA256SUMS.txt"
+  }
+}
