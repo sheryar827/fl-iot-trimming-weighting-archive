@@ -4,17 +4,7 @@ This archive accompanies the article *Trimming and Client-Size Weighting under H
 
 The article has not been submitted and has not been accepted. This archive is not the May 2026 three-arm snapshot.
 
-## Push status
-
-The result-packet tree is committed on this machine in `Research Paper/ieee_access_repro_bundle`. Publishing it needs one authenticated push from that directory:
-
-```
-git push -u origin main
-```
-
-The remote was created without an initial commit. Until the push succeeds, the remote can still be empty. The files listed below are in the local commit.
-
-## What the local commit contains
+## What this repository contains
 
 - `manuscript/` holds the IEEE Access source, the PDF, the supplementary governance note, and the figures drawn from the stored results.
 - `q1_cic_conf_results/`, `q1_e1_results/`, `q1_e1b_results/`, `q1_e2_results/`, `q1_e3_results/`, `q1_e4_results/`, `q1_e5_results/`, `q1_e6_results/`, and `q1_e7_results/` hold the written result packets, cell records, manifests, and the partition files that fit in git.
