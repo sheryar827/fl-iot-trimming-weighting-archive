@@ -1,6 +1,6 @@
 # Reproducibility archive: trimming and client-size weighting
 
-This archive accompanies the article *Trimming and Client-Size Weighting under Honest Label Heterogeneity: A Two-Factor Study in Federated IoT Botnet Detection* by Sheryar Kiani and Saad Farooq.
+This archive accompanies the article *Trimming and Client-Size Weighting under Honest Label Heterogeneity: A Two-Factor Study in Federated IoT Botnet Detection* by Sheryar Kiani.
 
 The article has not been submitted and has not been accepted. This archive is not the May 2026 three-arm snapshot.
 

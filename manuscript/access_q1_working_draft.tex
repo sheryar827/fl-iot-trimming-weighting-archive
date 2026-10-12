@@ -75,11 +75,11 @@
 % No \history or \doi value is supplied. IEEE assigns both after acceptance.
 
 \title{Trimming and Client-Size Weighting under Honest Label Heterogeneity: A Two-Factor Study in Federated IoT Botnet Detection}
-\author{\uppercase{Sheryar Kiani}\authorrefmark{1}, AND \uppercase{Saad Farooq}\authorrefmark{1}}
-\address[1]{Department of Cyber Security, Air University, Islamabad, Pakistan (e-mail: 2504142@students.au.edu.pk; 2504108@students.au.edu.pk)}
+\author{\uppercase{Sheryar Kiani}\authorrefmark{1}}
+\address[1]{Department of Cyber Security, Air University, Islamabad, Pakistan (e-mail: 2504142@students.au.edu.pk)}
 \corresp{Corresponding author: Sheryar Kiani (e-mail: 2504142@students.au.edu.pk).}
 \tfootnote{ORCID identifiers, funding sources, and conflict-of-interest statements were not supplied with this draft.}
-\markboth{Kiani \headeretal: Trimming and Client-Size Weighting under Honest Label Heterogeneity}{Kiani \headeretal: Trimming and Client-Size Weighting under Honest Label Heterogeneity}
+\markboth{Kiani: Trimming and Client-Size Weighting under Honest Label Heterogeneity}{Kiani: Trimming and Client-Size Weighting under Honest Label Heterogeneity}
 
 \begin{abstract}
 Coordinate-wise trimming discards an extreme client update, which under honest label heterogeneity may come from a client with a different class mixture. This article separates that trim from client-size weighting for federated IoT botnet detection. The arms are size-weighted FedAvg, unweighted FedAvg, an unweighted coordinate-wise trimmed mean, and the same trim with client-size weights. A preregistered seven-seed family covers CIC-IoT2023 at Dirichlet $\alpha=0.1$ and a nine-device N-BaIoT partition, for a multilayer perceptron and a convolutional network. Holm correction supports one of 16 paired Final macro-F1 contrasts. On the CIC convolutional network, size-weighted FedAvg is $10.7252$ percentage points below unweighted FedAvg (unadjusted 95\% paired-$t$ interval $[-15.9527,-5.4977]$; Holm-adjusted $p=0.0384533$). The other 15 contrasts are inconclusive, and neither complete trim-help nor complete weight-hurt is supported. Three-seed CIC directional patterns do not all reappear on the N-BaIoT device partition, and the corpus changes with the client construction, so partitioning is not isolated. A coordinate-wise median shows no supported difference from the trimmed mean on four Holm tests. An exact sign-flip test supports none of the 16 contrasts after Holm correction. Both test sets reuse exact training rows, and the N-BaIoT test uses the same devices as training. Clients are simulated partitions. Aggregation benefits here are conditional on the dataset and the client construction.
@@ -550,7 +550,7 @@ The three questions have direct answers on the evidence in hand. On the preregis
 Training used Python~3.12.10, NumPy~2.3.5, pandas~3.0.1, scikit-learn~1.8.0, SciPy~1.17.1, and PyTorch~2.5.1 with CUDA~12.1 on a Quadro~P3200. The new figures were drawn with Matplotlib~3.10.8. The primary local sources are the CIC confirmatory packet, the N-BaIoT device packet, the seven-seed packet, the 28 median cells, and the descriptive per-class table. Their manifests cover the written results and the processed caches. They do not independently hash every original source CSV. The public archive for this manuscript is \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. The supplement gives that address, the checksums of the two processed feature matrices, and the acquisition instructions for the public corpora. The result tables, cell records, manifests, and figure code are published in that repository. Those two matrices exceed the ordinary git file-size limit and are identified by checksum. The repository at \url{https://github.com/sheryar827/fl-iot-botnet-nbaiot-cic-iot2023} is the earlier three-arm lineage, and its README labels it as that lineage. Headline comparisons there are not the results of this article. The record at \url{https://doi.org/10.5281/zenodo.20456827} resolves to the immutable v1.0.0 snapshot \url{https://doi.org/10.5281/zenodo.20456828}, published on 30~May~2026. That snapshot is the three-arm study. It was not given a new version for this article, and it does not contain these packets.
 
 \section*{Acknowledgment}
-Grok (xAI) was used to draft and edit the text of the Introduction, Related Work, Methods, Results, Discussion, Conclusion, and Data and Reproducibility sections, to compute the descriptive tables and the forest, interaction, and per-class figures from the existing result files, and to prepare the supplementary note. The numerical claims were checked against those files. The system did not train the reported models and did not change the preregistered decision rules. No AI system is an author. The authors reviewed the manuscript and are responsible for its content.
+Grok (xAI) was used to draft and edit the text of the Introduction, Related Work, Methods, Results, Discussion, Conclusion, and Data and Reproducibility sections, to compute the descriptive tables and the forest, interaction, and per-class figures from the existing result files, and to prepare the supplementary note. The numerical claims were checked against those files. The system did not train the reported models and did not change the preregistered decision rules. No AI system is an author. The author reviewed the manuscript and is responsible for its content.
 
 \begin{thebibliography}{99}
 \bibitem{mcmahan17} B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas, ``Communication-efficient learning of deep networks from decentralized data,'' in \emph{Proc. AISTATS}, 2017, pp. 1273--1282.
@@ -575,10 +575,6 @@ Grok (xAI) was used to draft and edit the text of the Introduction, Related Work
 
 \begin{IEEEbiographynophoto}{Sheryar Kiani}
 Sheryar Kiani is an M.S.\ student in the Department of Cyber Security, Air University, Islamabad, Pakistan. His correspondence address is 2504142@students.au.edu.pk.
-\end{IEEEbiographynophoto}
-
-\begin{IEEEbiographynophoto}{Saad Farooq}
-Saad Farooq is an M.S.\ student in the Department of Cyber Security, Air University, Islamabad, Pakistan. His correspondence address is 2504108@students.au.edu.pk.
 \end{IEEEbiographynophoto}
 
 \EOD
