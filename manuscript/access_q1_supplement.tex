@@ -5,7 +5,7 @@
 \title{Supplementary governance note\\for the trimming and client-size weighting study}
 \author{Sheryar Kiani\\2504142@students.au.edu.pk
 \and Saad Farooq\\2504108@students.au.edu.pk}
-\date{11 October 2026}
+\date{Revised 12 October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -15,7 +15,7 @@
 \section{People and scope}
 The article authors are Sheryar Kiani, corresponding author, and Saad Farooq, both M.S.\ students in the Department of Cyber Security, Air University, Islamabad. The experimental amendments name Dr Hussain Kazmi as approver. He is not an author of the article. This note does not add a signature from him.
 
-The article was revised on 11 October 2026 for an SJR-Q1, IEEE Access-style submission. No new model was trained for that revision. The parent preregistration, the training engine, the partition code, the sealed result packets, the IEEE class file, and the legacy template \texttt{access.tex} were not edited. No new version of the May 2026 Zenodo snapshot was minted.
+The article was revised on 11 October 2026 for an SJR-Q1, IEEE Access-style submission. This note was revised on 12 October 2026 to correct the archive file count, to label the archive sizes in binary mebibytes, and to keep the repository address inside the page. No new model was trained for that revision. The parent preregistration, the training engine, the partition code, the sealed result packets, the IEEE class file, and the legacy template \texttt{access.tex} were not edited. No new version of the May 2026 Zenodo snapshot was minted.
 
 \section{Identifier map}
 The article uses plain names. The laboratory record uses the identifiers below.
@@ -61,7 +61,11 @@ The sealed planning figure for the median comparison is a different quantity: ex
 For each of the 16 seven-seed contrasts, the statistic is the absolute sum of the seven paired Final macro-F1 differences. All 128 sign assignments are treated as equally likely. The two-sided $p$-value is the fraction of assignments whose absolute sum is at least as large as the observed absolute sum. Holm adjustment across the 16 exact $p$-values supports no comparison. With seven nonzero differences the smallest such $p$-value is $2/128$, and $16\times 2/128=0.25$, so this exact family cannot reach a $0.05$ Holm threshold. The preregistered paired-$t$ Holm decision remains the official result.
 
 \section{Public archive and data acquisition}
-The public repository has been created at \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. The result tables, cell records, manifests, manuscript source, and partition files are committed in the local git repository \texttt{ieee\_access\_repro\_bundle} (855 files, 379.63~MB, largest file 36.82~MB). Publishing that commit requires \texttt{git push -u origin main} from that directory. The preparation session had no non-interactive GitHub credential, so the push was not completed and the remote may still be empty. The deposit is not meant to contain the two processed matrices named above, the raw corpora, or the tuning matrices.
+The public repository has been created. Its full address is printed on its own line below. The result tables, cell records, manifests, manuscript source, and partition files are committed in the local git repository \texttt{ieee\_access\_repro\_bundle}: 855 files, 379.63~MiB in total, and a largest file of 36.82~MiB. Those sizes use binary units, so the same totals are 398.07~MB and 38.61~MB in decimal units. Publishing that commit requires \texttt{git push -u origin main} from that directory. The preparation session had no non-interactive GitHub credential, so the push was not completed. The remote has no commits yet. The deposit is not meant to contain the two processed matrices named above, the raw corpora, or the tuning matrices.
+
+\begin{flushleft}\raggedright
+\url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}
+\end{flushleft}
 
 CIC-IoT2023 is the public corpus introduced by Neto \emph{et al.}, \emph{Sensors}, 2023. N-BaIoT is the public corpus introduced by Meidan \emph{et al.}, \emph{IEEE Pervasive Computing}, 2018. The processed caches cap each source file at 20,000 rows, use a stratified split with seed 42, and fit a standard scaler on the pooled training matrix only.
 
