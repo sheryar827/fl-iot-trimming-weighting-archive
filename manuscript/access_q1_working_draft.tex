@@ -118,6 +118,8 @@ Figure~\ref{fig:lineages} separates the developmental and central-evidence linea
 \end{figure*}
 
 \section{Related work and scope}
+The framework in this article is an evaluation plan for one narrow question: what changes when coordinate-wise trimming and client-size weighting are separated, and how far those comparisons can be trusted. It is not a new detector and not a claim that every robust-aggregation paper should use the same five parts. The related studies below each answer a different question. Table~\ref{tab:closest} states what Part 1, the two-by-two comparison, adds to each of them.
+
 FedAvg averages locally trained models with client-data-size weights \cite{mcmahan17}. FedProx adds a proximal term to the local objective \cite{li20}. SCAFFOLD uses control variates to correct client drift \cite{karimireddy20}. FedNova normalizes heterogeneous local progress to address objective inconsistency \cite{wang20fednova}. These methods act at different points in optimization. SCAFFOLD and FedNova are relevant to heterogeneity, but neither is an arm in the experiments below, and neither replaces the two-factor test of server-side trimming and client-size weighting.
 
 The type and degree of non-IID partitioning can change decentralized-learning accuracy \cite{hsieh20}, and a broad comparison found no single evaluated FL method that was best in every non-IID case \cite{li22noniid}. Label-distribution-skew methods such as FedLC target local minority and missing classes \cite{zhang22fedlc}. Those findings motivate class-wise measurement. They do not show that any rare class improved in these runs. Coordinate-wise trimmed means address a different problem: their Byzantine analyses allow arbitrary or adversarial worker behavior \cite{yin18}. A guarantee under that threat model does not transfer to honest device clients, or to this trimmed-parameter implementation, unless its assumptions are checked.
@@ -128,13 +130,11 @@ The coordinate-wise median is not the geometric median. Pillutla, Kakade, and Ha
 
 Client weights also come in more than one form. Nguyen, Wu, and Chang reweight individual samples so that a client's distribution moves toward a global distribution \cite{nguyen24weights}. Wilbik, P\k{e}kala, Dyczkowski, and Szko{\l}a compare client weights that depend on local model quality \cite{wilbik23}. The size weights in this article multiply an entire client parameter vector by that client's training-set size. Sample weights and quality weights are not arms.
 
-Federated IoT anomaly and botnet detection has earlier examples \cite{nguyen19diot,popoola22}. The N-BaIoT and CIC-IoT2023 source studies establish the two traffic corpora \cite{meidan18,neto23}. Albanbay \emph{et al.} compare model families and local data volume for federated intrusion detection on CICIoT2023, including a convolutional network, under a simulated device population \cite{albanbay25}. Their question is model and data scale. The question here is the aggregation factorial on processed versions of CIC-IoT2023 and N-BaIoT.
-
-Table~\ref{tab:closest} states what the controlled $2\times2$ adds. The table is a scope comparison. It is not a claim to be the first study of robust aggregation, client weighting, or federated IoT detection.
+Federated IoT anomaly and botnet detection has earlier examples \cite{nguyen19diot,popoola22}. The N-BaIoT and CIC-IoT2023 source studies establish the two traffic corpora \cite{meidan18,neto23}. Albanbay \emph{et al.} compare model families and local data volume for federated intrusion detection on CICIoT2023, including a convolutional network, under a simulated device population \cite{albanbay25}. Their question is model and data scale. Part 1 of this framework instead crosses trimming with client-size weighting on processed versions of both corpora. Parts 2 and 4 add the preregistered multiplicity control and the median comparison. Parts 3 and 5 are later checks on the same stored results. None of those parts is a claim to be the first study of robust aggregation, client weighting, or federated IoT detection.
 
 \begin{table*}[!t]
 \centering
-\caption{Closest related studies. Each row names the question that study asks. The last column is the increment from crossing coordinate-wise trimming with client-size weighting on the two processed corpora in this article.}
+\caption{Closest related studies, read against Part 1 of this evaluation. Each row names the question that study asks. The last column is what the two-by-two comparison adds. Parts 2 through 5 are not separate rows in this table.}
 \label{tab:closest}
 \small
 \begin{tabular}{p{2.5cm}p{6.3cm}p{7.2cm}}
@@ -311,6 +311,33 @@ Figure~\ref{fig:paired} complements Table~\ref{tab:contrasts} by displaying ever
 
 The CIC and N-BaIoT directional outcomes differ, but the datasets and client partitions also differ. Their contrast signs can be discussed side by side; their raw scores are not pooled, and this study cannot isolate device partitioning as the cause of the difference. The 30-round histories also show that some CNN cells end substantially below their own best round. We therefore preserve the prespecified Final endpoint and report Best only as a secondary trajectory diagnostic.
 
+\subsection{Part 1 descriptive interaction}
+The interaction $(\mathrm{WT}-\mathrm{FA})-(\mathrm{FT}-\mathrm{UW})$ stays inside Part 1. It describes the crossing of trimming and client-size weighting. It was prespecified as a descriptive summary, it is outside the 16-test Holm family, and no interaction $p$-value is used as a decision. It is not a sixth part of the framework. Table~\ref{tab:interaction} and Fig.~\ref{fig:interaction} report the seven-seed mean, the unadjusted 95\% paired-$t$ interval, and the positive, tie, and negative seed counts. On T1 and T2 the interval excludes zero. On T5 and T6 it includes zero. These intervals describe the estimates. They do not add a supported comparison, and they do not change Table~\ref{tab:e4}.
+
+\begin{table}[!t]
+\centering
+\caption{Part 1. Descriptive trimming-by-weighting interaction on the seven prospective seeds, in Final macro-F1 percentage points. Signs are positive, tie, and negative counts. No decision $p$-value is attached.}
+\label{tab:interaction}
+\small
+\begin{tabular}{lrrl}
+\hline
+Block & Mean & 95\% interval & Signs \\
+\hline
+T1 & 7.0612 & $[0.3531,\ 13.7692]$ & 7/0/0 \\
+T2 & 7.8498 & $[1.8981,\ 13.8015]$ & 6/0/1 \\
+T5 & $-1.6837$ & $[-4.7734,\ 1.4060]$ & 3/0/4 \\
+T6 & 0.5505 & $[-8.9670,\ 10.0680]$ & 2/0/5 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{generated/q1_e4_interaction.png}
+\caption{Part 1. Descriptive interaction estimates. The bar is the unadjusted 95\% paired-$t$ interval. These four estimates are outside the Holm family and are not a sixth part of the evaluation.}
+\label{fig:interaction}
+\end{figure}
+
 \subsection{Part 2: preregistered seven-seed test}
 \label{sec:e4}
 The three-seed boards above do not include a multiplicity-controlled test. That test was preregistered separately and is now closed. It uses the same train-only scaler, nine simulated clients, 30 rounds, and four arms, but only four blocks: CIC-IoT2023 MLP and CNN at Dirichlet $\alpha=0.1$ (T1 and T2), and the fixed N-BaIoT nine-device partition for MLP and CNN (T5 and T6). The CIC $\alpha=0.5$ cells are not in this family. On CIC, each new seed sets matched random conditions for all four arms. On N-BaIoT, the device partition stays fixed across seeds. The seven prospective seeds are $\{127,131,137,139,149,151,157\}$. The three earlier seeds are excluded from the tests. One hundred twelve new cells were completed. The endpoint is unrounded Final macro-F1 at round 30.
@@ -391,33 +418,6 @@ T6 & WT$-$FT & 0.968750 & 1 \\
 \end{tabular}
 \end{table}
 
-\subsection{Part 1 descriptive interaction}
-The interaction $(\mathrm{WT}-\mathrm{FA})-(\mathrm{FT}-\mathrm{UW})$ was prespecified as a descriptive summary. It is outside the 16-test Holm family, and no interaction $p$-value is used as a decision. Table~\ref{tab:interaction} and Fig.~\ref{fig:interaction} report the seven-seed mean, the unadjusted 95\% paired-$t$ interval, and the positive, tie, and negative seed counts. On T1 and T2 the interval excludes zero. On T5 and T6 it includes zero. These intervals describe the estimates. They do not add a fifth supported comparison, and they do not change Table~\ref{tab:e4}.
-
-\begin{table}[!t]
-\centering
-\caption{Descriptive trimming-by-weighting interaction on the seven prospective seeds, in Final macro-F1 percentage points. Signs are positive, tie, and negative counts. No decision $p$-value is attached.}
-\label{tab:interaction}
-\small
-\begin{tabular}{lrrl}
-\hline
-Block & Mean & 95\% interval & Signs \\
-\hline
-T1 & 7.0612 & $[0.3531,\ 13.7692]$ & 7/0/0 \\
-T2 & 7.8498 & $[1.8981,\ 13.8015]$ & 6/0/1 \\
-T5 & $-1.6837$ & $[-4.7734,\ 1.4060]$ & 3/0/4 \\
-T6 & 0.5505 & $[-8.9670,\ 10.0680]$ & 2/0/5 \\
-\hline
-\end{tabular}
-\end{table}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=\columnwidth]{generated/q1_e4_interaction.png}
-\caption{Descriptive interaction estimates. The bar is the unadjusted 95\% paired-$t$ interval. These four estimates are outside the Holm family.}
-\label{fig:interaction}
-\end{figure}
-
 \subsection{Part 4: trimmed mean against the coordinate-wise median}
 \label{sec:e5}
 Part 4 was specified separately from Part 2. It asks whether the coordinate-wise trimmed mean differs from the coordinate-wise median. The comparison uses the same four blocks and the same seven seeds, $\{127,131,137,139,149,151,157\}$. Each median cell uses Adam at learning rate $10^{-3}$, three local epochs, batch size 512, and 30 rounds. On each coordinate the server keeps the fifth ordered value across the nine client updates and does not weight clients by sample size. The comparator is the trimmed-mean cell from the seven-seed family for the same block and seed. Those trimmed-mean cells were not retrained. FedNova is not an arm in this comparison. The supplement records why an earlier plan that included FedNova ended before any decision cell.
@@ -480,8 +480,8 @@ The CIC training matrix has $4{,}825{,}692$ rows and $3{,}565{,}650$ unique rows
 
 The N-BaIoT training matrix has $1{,}418{,}112$ rows and $742{,}236$ unique rows. Of $354{,}529$ test rows, $211{,}718$ ($59.72\%$) are exact copies of some training row. All eleven classes appear in both splits. Source identifiers $0$ through $8$ appear in both splits, and all $354{,}529$ test rows come from a source that also appears in training. The N-BaIoT evaluation is a pooled within-device holdout. It is not a test on unseen devices.
 
-\subsection{Per-class means on the three-seed CIC grid}
-Fig.~\ref{fig:heatmap} shows mean per-class F1 for the CIC-IoT2023 MLP and CNN at $\alpha=0.1$, using the three seeds $\{42,123,7\}$ and all four arms. This display is descriptive. It is not part of the seven-seed Holm family, and it is not a rare-class finding. Mirai is near the top of the color scale for every arm on both models. Web remains low for every arm on both models. The figure shows that macro-F1 averages classes with very different detection levels. It does not identify which coordinates were trimmed.
+\subsection{Additional description, not a sixth part: per-class means}
+The five parts above are the evaluation named in the abstract. The displays in this subsection and the next two are extra description. They do not add a part and they do not change a decision. Fig.~\ref{fig:heatmap} shows mean per-class F1 for the CIC-IoT2023 MLP and CNN at $\alpha=0.1$, using the three seeds $\{42,123,7\}$ and all four arms. This display is descriptive. It is not part of the seven-seed Holm family, and it is not a rare-class finding. Mirai is near the top of the color scale for every arm on both models. Web remains low for every arm on both models. The figure shows that macro-F1 averages classes with very different detection levels. It does not identify which coordinates were trimmed.
 
 \begin{figure*}[!t]
 \centering
@@ -490,8 +490,8 @@ Fig.~\ref{fig:heatmap} shows mean per-class F1 for the CIC-IoT2023 MLP and CNN a
 \label{fig:heatmap}
 \end{figure*}
 
-\subsection{Final score, training time, and model size}
-The prespecified endpoint is Final macro-F1 at round 30. Table~\ref{tab:gap} compares that score with the best round-wise macro-F1 inside the same 30 rounds, for the 112 seven-seed cells. Histories were checked against the seed table. Mean gaps are $1.204$, $1.456$, $1.697$, and $3.242$ percentage points on T1, T2, T5, and T6. The largest single-cell gap is $9.019$ percentage points, on T6. Only $3$, $5$, $4$, and $6$ cells in those blocks have their best score at round 30. Late-round decline is present. The average gap is a few points, and the reported comparison continues to use round 30.
+\subsection{Additional description: final score, training time, and model size}
+These quantities explain the Part 2 endpoint and the cost of the cells. They are not a separate evaluation part. The prespecified endpoint is Final macro-F1 at round 30. Table~\ref{tab:gap} compares that score with the best round-wise macro-F1 inside the same 30 rounds, for the 112 seven-seed cells. Histories were checked against the seed table. Mean gaps are $1.204$, $1.456$, $1.697$, and $3.242$ percentage points on T1, T2, T5, and T6. The largest single-cell gap is $9.019$ percentage points, on T6. Only $3$, $5$, $4$, and $6$ cells in those blocks have their best score at round 30. Late-round decline is present. The average gap is a few points, and the reported comparison continues to use round 30.
 
 \begin{table*}[!t]
 \centering
@@ -529,13 +529,13 @@ T6 & 1.461 & 1.473 & 40.921 \\
 \end{tabular}
 \end{table}
 
-\subsection{Developmental lineage}
-Before the train-scaler blocks, reporting was corrected so that round 30, rather than the maximum test-set F1 across 30 rounds, was the primary result. Adding unweighted FedAvg and size-weighted trimmed mean to an older three-arm, full-scaler grid exposed the trim-versus-weight confound and motivated the four-arm design. Those runs remain a separate \texttt{scale\_on=full} lineage. No unweighted-FedAvg or size-weighted-trimmed-mean IID anchors were run, and their scores are not combined with Tables~\ref{tab:cic}--\ref{tab:contrasts}.
+\subsection{Outside the five parts: developmental lineage}
+The five-part evaluation uses the train-only-scaled blocks. The runs below came earlier, use a different scaler, and are not one of the five parts. Before the train-scaler blocks, reporting was corrected so that round 30, rather than the maximum test-set F1 across 30 rounds, was the primary result. Adding unweighted FedAvg and size-weighted trimmed mean to an older three-arm, full-scaler grid exposed the trim-versus-weight confound and motivated the four-arm design. Those runs remain a separate \texttt{scale\_on=full} lineage. No unweighted-FedAvg or size-weighted-trimmed-mean IID anchors were run, and their scores are not combined with Tables~\ref{tab:cic}--\ref{tab:contrasts}.
 
 A scoped FedProx diagnostic belongs to that full-scaler lineage and is not a fifth arm. On its CIC CNN $\alpha=1.0$, seed-42 cell, $\mu=0.01$ reduced Final macro-F1 by $6.94$ percentage points relative to the matched $\mu=0$ run under Adam and by $0.72$ points under SGD. That cell does not support a general claim about FedProx. Its scores are not combined with the train-scaler tables.
 
-\section{Conceptual bridge: trimming honest updates}
-Coordinate-wise trimmed-mean methods have been studied under Byzantine models in which some workers may send arbitrary or adversarial messages \cite{yin18}. These experiments have no adversarial clients. Every client follows the same training procedure. A trimmed-mean result under its own threat model does not establish Byzantine robustness for this detector, and it does not by itself predict an advantage under honest label skew.
+\section{Conceptual bridge for Part 1}
+This section is a mechanism reading of Part 1. It is not a sixth part of the evaluation, and it is not a result from Parts 2 through 5. Coordinate-wise trimmed-mean methods have been studied under Byzantine models in which some workers may send arbitrary or adversarial messages \cite{yin18}. These experiments have no adversarial clients. Every client follows the same training procedure. A trimmed-mean result under its own threat model does not establish Byzantine robustness for this detector, and it does not by itself predict an advantage under honest label skew.
 
 Two honest mechanisms can move the aggregate. A client with more training rows has more weight in FA than in UW. Clients with different class mixtures can return different parameter vectors after only three local epochs, and those vectors are not solved local risk minimizers. In the device block, two clients have no Mirai training examples. Those differences could place some honest coordinates in the tails that FT or WT exclude. The study has not established which clients are trimmed on which coordinates, or whether that explains the measured contrasts.
 
@@ -556,7 +556,7 @@ The three-seed tables estimate limited run-to-run variation. The seven-seed fami
 The five parts have direct answers, and those answers keep the distinction between planned comparisons and later checks. In Part 1, the three-seed CIC directional pattern is not repeated on the N-BaIoT device partition, and that comparison does not isolate client construction because the dataset also changes. In Part 2, the preregistered seven-seed test supports one contrast: on the CIC convolutional network at $\alpha=0.1$, size-weighted FedAvg finishes $10.7252$ percentage points below unweighted FedAvg in Final macro-F1. The other 15 contrasts are inconclusive, and neither complete hypothesis is supported. In Part 3, the post-hoc sign-flip check supports none of those 16 contrasts after Holm correction. In Part 4, none of four Holm tests supports a difference between the trimmed mean and the coordinate-wise median. In Part 5, both pooled test sets contain exact copies of stored training rows, and the N-BaIoT test uses the same devices as training. Clients are simulated partitions. The apparent benefits of trimming and of client-size weighting depend on the dataset and on the client construction.
 
 \section{Data and reproducibility}
-Training used Python~3.12.10, NumPy~2.3.5, pandas~3.0.1, scikit-learn~1.8.0, SciPy~1.17.1, and PyTorch~2.5.1 with CUDA~12.1 on a Quadro~P3200. The new figures were drawn with Matplotlib~3.10.8. The primary local sources are the CIC confirmatory packet, the N-BaIoT device packet, the seven-seed packet, the 28 median cells, and the descriptive per-class table. Their manifests cover the written results and the processed caches. They do not independently hash every original source CSV. The public archive for this manuscript is \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. The supplement gives that address, the checksums of the two processed feature matrices, and the acquisition instructions for the public corpora. The result tables, cell records, manifests, and figure code are published in that repository. Those two matrices exceed the ordinary git file-size limit and are identified by checksum. The repository at \url{https://github.com/sheryar827/fl-iot-botnet-nbaiot-cic-iot2023} is the earlier three-arm lineage, and its README labels it as that lineage. Headline comparisons there are not the results of this article. The record at \url{https://doi.org/10.5281/zenodo.20456827} resolves to the immutable v1.0.0 snapshot \url{https://doi.org/10.5281/zenodo.20456828}, published on 30~May~2026. That snapshot is the three-arm study. It was not given a new version for this article, and it does not contain these packets.
+The archive below stores the materials for the five-part evaluation: the two-by-two cells, the seven-seed cells used in Parts 2 and 3, the median cells used in Part 4, and the partition and matrix records used in Part 5. Training used Python~3.12.10, NumPy~2.3.5, pandas~3.0.1, scikit-learn~1.8.0, SciPy~1.17.1, and PyTorch~2.5.1 with CUDA~12.1 on a Quadro~P3200. The new figures were drawn with Matplotlib~3.10.8. The primary local sources are the CIC confirmatory packet, the N-BaIoT device packet, the seven-seed packet, the 28 median cells, and the descriptive per-class table. Their manifests cover the written results and the processed caches. They do not independently hash every original source CSV. The public archive for this manuscript is \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. The supplement gives that address, the checksums of the two processed feature matrices, and the acquisition instructions for the public corpora. The result tables, cell records, manifests, and figure code are published in that repository. Those two matrices exceed the ordinary git file-size limit and are identified by checksum. The repository at \url{https://github.com/sheryar827/fl-iot-botnet-nbaiot-cic-iot2023} is the earlier three-arm lineage, and its README labels it as that lineage. Headline comparisons there are not the results of this article. The record at \url{https://doi.org/10.5281/zenodo.20456827} resolves to the immutable v1.0.0 snapshot \url{https://doi.org/10.5281/zenodo.20456828}, published on 30~May~2026. That snapshot is the three-arm study. It was not given a new version for this article, and it does not contain these packets.
 
 \begin{thebibliography}{99}
 \bibitem{mcmahan17} B. McMahan, E. Moore, D. Ramage, S. Hampson, and B. A. y Arcas, ``Communication-efficient learning of deep networks from decentralized data,'' in \emph{Proc. AISTATS}, 2017, pp. 1273--1282.
