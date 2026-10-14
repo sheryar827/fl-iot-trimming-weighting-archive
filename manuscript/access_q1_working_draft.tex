@@ -98,13 +98,15 @@ The original three-arm comparison of FedAvg, FedProx, and an unweighted coordina
 
 This article reports the completed train-only-scaled blocks. CIC-IoT2023 provides a preregistered Dirichlet-label-skew comparison at $\alpha\in\{0.5,0.1\}$, and N-BaIoT provides a preregistered nine-device partition. A separate seven-seed family then retests only the CIC $\alpha=0.1$ cells and the N-BaIoT device cells. The comparison asks whether the directions of the trimming and weighting contrasts seen on CIC also appear on the N-BaIoT device clients. It does not say that changing the partition alone caused a difference between datasets. The three reported endpoints are Final accuracy, Final macro-F1, and the mean of 30 round-wise macro-F1 scores. The prespecified directional rules use Final macro-F1. The round-wise mean is sometimes called ``AUC'' in the result files. It is not ROC-AUC.
 
-Three questions organize the evidence.
+The completed evidence is reported as a five-part evaluation. The parts were not written down as one protocol before every analysis. Parts 1, 2, and 4 were fixed before their own results were used. Parts 3 and 5 were added later from stored results and stored matrices.
 \begin{enumerate}
-\item Which contrasts of trimming and of client-size weighting are supported on the preregistered seven-seed family?
-\item Do the three-seed CIC Dirichlet directional patterns appear on the N-BaIoT device partition?
-\item Does the coordinate-wise median differ from the trimmed mean on the same four blocks and the same seven seeds?
+\item Part 1 crosses coordinate-wise trimming with client-size weighting in a two-by-two comparison. On the three-seed grids it also asks whether the CIC directional pattern appears on the N-BaIoT device partition. That comparison does not isolate client construction, because the dataset changes as well.
+\item Part 2 is the preregistered seven-seed test of Final macro-F1 at round 30, with Holm correction across 16 paired-$t$ tests.
+\item Part 3 is a post-hoc exact sign-flip check of those same 16 contrasts. It is not the preregistered decision.
+\item Part 4 compares the trimmed mean with a coordinate-wise median on the same four blocks and seven seeds. This comparison was preregistered separately, after the two-by-two study.
+\item Part 5 audits duplicate test rows and client imbalance in the stored matrices. No new model was trained for these audits.
 \end{enumerate}
-The contribution is the separation. Once trimming and client-size weighting are crossed, apparent benefits depend on the dataset and on how the clients are built. One weighting contrast survives the preregistered seven-seed test. The broader trimming hypotheses and the median comparison remain inconclusive. Question~2 asks whether a directional pattern travels from one processed corpus to the other. It does not establish a causal effect of client construction, because the dataset also changes. The clients are simulated partitions of two public corpora. The study includes no privacy mechanism, no rare-class benefit, no adversarial client, and no physical deployment, and it uses no equivalence procedure.
+The contribution is this separation, reported with those limits. Once trimming and client-size weighting are crossed, apparent benefits depend on the dataset and on how the clients are built. One weighting contrast survives the preregistered seven-seed test. The broader trimming hypotheses and the median comparison remain inconclusive. The clients are simulated partitions of two public corpora. The study includes no privacy mechanism, no rare-class benefit, no adversarial client, and no physical deployment, and it uses no equivalence procedure.
 
 Figure~\ref{fig:lineages} separates the developmental and central-evidence lineages. Results produced with a scaler fit to the full split are not pooled with results produced with a training-only scaler.
 
@@ -152,6 +154,9 @@ D{\"I}oT and Popoola \emph{et al.} \cite{nguyen19diot,popoola22} & Federated IoT
 \end{table*}
 
 \section{Methods}
+\subsection{How the five parts were specified}
+Parts 1 and 2 use the same four arms. Part 1 records the three-seed directional comparisons. Part 2 applies the preregistered Holm rule to seven new seeds on four blocks only. Part 4 uses the trimmed-mean cells from Part 2 and adds the coordinate-wise median. Those three parts were specified before their decision results were used. Part 3 applies an exact sign-flip test to the Part 2 differences after those paired-$t$ results existed. Part 5 reads the stored feature matrices and the stored client partitions. It does not add a training run. The sections below give the shared experimental settings, then the rule used by each part.
+
 \subsection{Data, partitions, and preprocessing lineages}
 N-BaIoT contains traffic from nine commercial IoT device identities \cite{meidan18}. The task here has 11 classes and 115 numeric features. CIC-IoT2023 adds a separate eight-category task with 39 numeric flow features \cite{neto23}. Table~\ref{tab:data} summarizes the processed caches. Each source file is capped at 20,000 rows. A stratified split with seed 42 produces pooled train and test sets. For the two blocks below, a standard scaler is fit on the pooled training matrix only and then applied to train and test. That choice avoids fitting the scaler on test records. It is not fully local or privacy-preserving preprocessing, because the scaler uses pooled training data.
 
@@ -215,7 +220,9 @@ The reported endpoints are Final accuracy, Final macro-F1, and the mean of round
 Each completed row is bound to the processed train-scaler cache and the metadata hashes recorded for its block. Histories contain exactly 30 rounds, and the stored Final macro-F1 is checked against round 30 before a cell counts as complete. The CIC and N-BaIoT manifests cover the processed caches and the written histories. They do not independently hash every original source CSV. Final accuracy and Final macro-F1 use round 30. They are not replaced by the maximum score over the 30 pooled-test evaluations. That rule keeps a test-selected best round from replacing the prespecified final model.
 
 \section{Results}
-\subsection{Train-only-scaled CIC-IoT2023 confirmatory block}
+The results follow the five parts named in the Introduction. Parts 1, 2, and 4 are the planned comparisons. Parts 3 and 5 are later checks.
+
+\subsection{Part 1: two-by-two comparison on CIC-IoT2023}
 Table~\ref{tab:cic} gives three-seed means of the three endpoints. Under the prespecified Final macro-F1 rule, FT has the highest arm mean, both trim contrasts have positive means, and both weight contrasts have negative means in each of the four model-by-$\alpha$ cells. The descriptive directional rule is met in all four cells. That does not mean every seed has the same sign, and it does not mean a significance test was passed.
 
 \begin{table*}[!t]
@@ -247,7 +254,7 @@ CNN & 0.1 & FA & 0.85276 & 0.40552 & 0.38295 \\
 \end{tabular}
 \end{table*}
 
-\subsection{Train-only-scaled N-BaIoT device block}
+\subsection{Part 1 continued: two-by-two comparison on the N-BaIoT device partition}
 Table~\ref{tab:e2} reports the corresponding device-partition means for all three primary endpoints. Neither descriptive directional rule was met for either model: both N-BaIoT scores are $0/2$. FT minus UW is negative in all three seeds in both models, whereas WT minus FT is positive in all three seeds in both models. The remaining contrast signs vary by seed. WT has the highest descriptive MLP Final macro-F1 mean; UW exceeds WT by only about 0.22 percentage points in the CNN Final macro-F1 means. There is no preregistered FT-first decision for this block, and these rankings should not be treated as superiority or equivalence findings.
 
 \begin{table*}[!t]
@@ -271,7 +278,7 @@ CNN & FA & 0.80437 & 0.75374 & 0.73127 \\
 \end{tabular}
 \end{table*}
 
-\subsection{Paired factor contrasts}
+\subsection{Part 1 continued: paired contrasts}
 Table~\ref{tab:contrasts} exposes the paired Final macro-F1 contrasts used for the directional decisions. Values are mean percentage-point differences over the three matched seeds. Parentheses give the number of seeds with the prespecified direction: positive for the two trim contrasts and negative for the two weight contrasts. The CIC descriptive rule uses the signs of the unrounded three-seed means; the table makes clear where an individual seed disagrees. On N-BaIoT, neither descriptive directional rule was met.
 
 \begin{table*}[!t]
@@ -304,7 +311,7 @@ Figure~\ref{fig:paired} complements Table~\ref{tab:contrasts} by displaying ever
 
 The CIC and N-BaIoT directional outcomes differ, but the datasets and client partitions also differ. Their contrast signs can be discussed side by side; their raw scores are not pooled, and this study cannot isolate device partitioning as the cause of the difference. The 30-round histories also show that some CNN cells end substantially below their own best round. We therefore preserve the prespecified Final endpoint and report Best only as a secondary trajectory diagnostic.
 
-\subsection{Seven-seed prospective family}
+\subsection{Part 2: preregistered seven-seed test}
 \label{sec:e4}
 The three-seed boards above do not include a multiplicity-controlled test. That test was preregistered separately and is now closed. It uses the same train-only scaler, nine simulated clients, 30 rounds, and four arms, but only four blocks: CIC-IoT2023 MLP and CNN at Dirichlet $\alpha=0.1$ (T1 and T2), and the fixed N-BaIoT nine-device partition for MLP and CNN (T5 and T6). The CIC $\alpha=0.5$ cells are not in this family. On CIC, each new seed sets matched random conditions for all four arms. On N-BaIoT, the device partition stays fixed across seeds. The seven prospective seeds are $\{127,131,137,139,149,151,157\}$. The three earlier seeds are excluded from the tests. One hundred twelve new cells were completed. The endpoint is unrounded Final macro-F1 at round 30.
 
@@ -314,7 +321,7 @@ Table~\ref{tab:e4} reports every comparison. Means and intervals are shown to fo
 
 \begin{table*}[!t]
 \centering
-\caption{Seven-seed family, Question~1. Paired Final macro-F1 differences, in percentage points. The interval is the unadjusted 95\% paired-$t$ confidence interval. Signs are positive, tie, and negative counts. Holm adjustment uses all 16 rows. Only T2 $\mathrm{FA}-\mathrm{UW}$ is supported. This paired-$t$ Holm family is the preregistered decision.}
+\caption{Part 2, the seven-seed family. Paired Final macro-F1 differences, in percentage points. The interval is the unadjusted 95\% paired-$t$ confidence interval. Signs are positive, tie, and negative counts. Holm adjustment uses all 16 rows. Only T2 $\mathrm{FA}-\mathrm{UW}$ is supported. This paired-$t$ Holm family is the preregistered decision.}
 \label{tab:e4}
 \scriptsize
 \begin{tabular}{llrrrrlr}
@@ -350,7 +357,7 @@ Neither complete hypothesis is supported. Trim-help requires both trim compariso
 \label{fig:forest}
 \end{figure*}
 
-\subsection{Exact sign-flip sensitivity}
+\subsection{Part 3: post-hoc exact sign-flip check}
 The paired-$t$ test at $n=7$ leans on a normal approximation for the mean of seven differences. A post-hoc exact sign-flip test uses the same seven differences and makes a weaker assumption: under exchangeability of the sign of each paired difference, all $2^{7}=128$ sign assignments are equally likely. The statistic is the absolute sum of the signed differences. The two-sided $p$-value is the fraction of the 128 assignments whose absolute sum is at least the observed absolute sum. Holm adjustment is then applied to these 16 exact $p$-values.
 
 Table~\ref{tab:signflip} reports that sensitivity. No comparison has a sign-flip Holm-adjusted $p$-value below $0.25$. The smallest raw values are $2/128=0.015625$, for T1 $\mathrm{WT}-\mathrm{FA}$, T2 $\mathrm{FA}-\mathrm{UW}$, and T5 $\mathrm{WT}-\mathrm{FA}$. With seven nonzero differences, $2/128$ is the smallest two-sided $p$-value this enumeration can return. Holm adjustment across 16 tests therefore cannot fall below $16\times 2/128=0.25$. The exact family-wise test cannot resolve this 16-comparison family at level $0.05$ when each contrast has only seven seeds. The preregistered paired-$t$ Holm decision remains the official result, and under that rule T2 $\mathrm{FA}-\mathrm{UW}$ stays supported. Reviewers should see both statements together: the official test supports one weighting contrast, and the small-sample exact test supports none.
@@ -384,7 +391,7 @@ T6 & WT$-$FT & 0.968750 & 1 \\
 \end{tabular}
 \end{table}
 
-\subsection{Trimming-by-weighting interaction}
+\subsection{Part 1 descriptive interaction}
 The interaction $(\mathrm{WT}-\mathrm{FA})-(\mathrm{FT}-\mathrm{UW})$ was prespecified as a descriptive summary. It is outside the 16-test Holm family, and no interaction $p$-value is used as a decision. Table~\ref{tab:interaction} and Fig.~\ref{fig:interaction} report the seven-seed mean, the unadjusted 95\% paired-$t$ interval, and the positive, tie, and negative seed counts. On T1 and T2 the interval excludes zero. On T5 and T6 it includes zero. These intervals describe the estimates. They do not add a fifth supported comparison, and they do not change Table~\ref{tab:e4}.
 
 \begin{table}[!t]
@@ -411,9 +418,9 @@ T6 & 0.5505 & $[-8.9670,\ 10.0680]$ & 2/0/5 \\
 \label{fig:interaction}
 \end{figure}
 
-\subsection{Coordinate-wise median comparison}
+\subsection{Part 4: trimmed mean against the coordinate-wise median}
 \label{sec:e5}
-Question~3 is separate from Question~1. It asks whether the coordinate-wise trimmed mean differs from the coordinate-wise median. The comparison uses the same four blocks and the same seven seeds, $\{127,131,137,139,149,151,157\}$. Each median cell uses Adam at learning rate $10^{-3}$, three local epochs, batch size 512, and 30 rounds. On each coordinate the server keeps the fifth ordered value across the nine client updates and does not weight clients by sample size. The comparator is the trimmed-mean cell from the seven-seed family for the same block and seed. Those trimmed-mean cells were not retrained. FedNova is not an arm in this comparison. The supplement records why an earlier plan that included FedNova ended before any decision cell.
+Part 4 was specified separately from Part 2. It asks whether the coordinate-wise trimmed mean differs from the coordinate-wise median. The comparison uses the same four blocks and the same seven seeds, $\{127,131,137,139,149,151,157\}$. Each median cell uses Adam at learning rate $10^{-3}$, three local epochs, batch size 512, and 30 rounds. On each coordinate the server keeps the fifth ordered value across the nine client updates and does not weight clients by sample size. The comparator is the trimmed-mean cell from the seven-seed family for the same block and seed. Those trimmed-mean cells were not retrained. FedNova is not an arm in this comparison. The supplement records why an earlier plan that included FedNova ended before any decision cell.
 
 The endpoint is unrounded Final macro-F1 at round 30. Each test is a two-sided paired $t$ test on the seven seed-wise differences, trimmed mean minus coordinate-wise median, with $n=7$ and $\mathrm{df}=6$. Holm adjustment covers these four tests only, in the order T1, T2, T5, T6, at family-wise level $0.05$. A positive supported mean would say the trimmed mean is higher than the median in that block only. A negative supported mean would say the median is higher in that block only. This adjustment is not combined with Table~\ref{tab:e4}.
 
@@ -421,7 +428,7 @@ Table~\ref{tab:e5} reports every comparison. Means and intervals are in percenta
 
 \begin{table*}[!t]
 \centering
-\caption{Question~3. Paired Final macro-F1 differences, in percentage points, over seven seeds. The difference is the trimmed mean minus the coordinate-wise median. The interval is the unadjusted 95\% paired-$t$ confidence interval. Signs are negative, tie, and positive counts, in that order. Holm adjustment uses these four rows only. No row is supported.}
+\caption{Part 4. Paired Final macro-F1 differences, in percentage points, over seven seeds. The difference is the trimmed mean minus the coordinate-wise median. The interval is the unadjusted 95\% paired-$t$ confidence interval. Signs are negative, tie, and positive counts, in that order. Holm adjustment uses these four rows only. No row is supported.}
 \label{tab:e5}
 \scriptsize
 \begin{tabular}{llrrrrlr}
@@ -436,8 +443,8 @@ T6 & FT$-$median & $-1.6825$ & $[-4.8882,\ 1.5233]$ & 3/0/4 & 0.246421 & 0.73926
 \end{tabular}
 \end{table*}
 
-\subsection{Client heterogeneity}
-Question~2 compares directional patterns, not raw scores. The two client constructions are also different in size and in label mix, and those differences can be measured without a new training run. Table~\ref{tab:hetero} uses the same Dirichlet allocations and the same device partition as the seven-seed family. A partition is included only when its hash matches the recorded configuration. Jensen--Shannon divergence is computed in bits between each client's training-label distribution and the pooled training-label distribution. A missing class is a class with zero training rows on that client.
+\subsection{Part 5: client imbalance}
+Part 5 was computed after the training runs, from the stored partitions. It compares client size and label mix. It does not add a new model. Table~\ref{tab:hetero} uses the same Dirichlet allocations and the same device partition as the seven-seed family. A partition is included only when its hash matches the recorded configuration. Jensen--Shannon divergence is computed in bits between each client's training-label distribution and the pooled training-label distribution. A missing class is a class with zero training rows on that client.
 
 On CIC-IoT2023 at $\alpha=0.1$, client size is highly unbalanced. The largest-to-smallest client ratio runs from $10.8$ to $1{,}555$, the coefficient of variation from $0.73$ to $1.63$, and the largest client's share of training rows from $0.270$ to $0.584$. Mean Jensen--Shannon divergence is between $0.357$ and $0.498$ bits. Every seed leaves at least one class missing from at least one client; the mean number of missing classes per client is about $1.22$ to $1.33$, and the worst client in a seed misses $2$ to $4$ classes.
 
@@ -466,7 +473,7 @@ N-BaIoT, device & 95,875 & 176,174 & 1.84 & 0.21 & 0.124 & 1.11 & 5 & 0.054 & 0.
 \end{tabular}
 \end{table*}
 
-\subsection{Duplicate rows and source overlap}
+\subsection{Part 5 continued: duplicate rows and source overlap}
 Both datasets reuse a pooled train/test structure. The leakage check compares stored float32 feature rows by exact equality, which is the matrix the models saw. It does not rebuild the caches. A feature with zero variance can make distinct raw rows identical after scaling, so an exact match is evidence about the stored matrix, not a reconstructed raw-file identity.
 
 The CIC training matrix has $4{,}825{,}692$ rows and $3{,}565{,}650$ unique rows. Of $1{,}206{,}424$ test rows, $381{,}765$ ($31.64\%$) are exact copies of some training row. All eight classes appear in both splits. The stored cache has no test source identifier, and the stored training source identifier takes only one value, so overlap of CIC source files between train and test cannot be counted from this cache.
@@ -535,16 +542,18 @@ Two honest mechanisms can move the aggregate. A client with more training rows h
 Fig.~\ref{fig:heatmap} shows that per-class F1 already differs across attack families on the three-seed CIC grid. Macro-F1 averages those levels. The figure is descriptive. It does not show that trimming protects or harms a rare class, and $\mathrm{WT}-\mathrm{UW}$ changes both factors at once, so it is not read as a one-factor effect.
 
 \section{Discussion and limitations}
-Separating coordinate-wise trimming from client-size weighting changes how these experiments should be read. The three-seed CIC grid meets the descriptive trim-help and weight-hurt rules in all four model-by-$\alpha$ cells. The three-seed N-BaIoT device partition meets neither rule for either model. The seven-seed family supports only one component, T2 $\mathrm{FA}-\mathrm{UW}$, and supports neither complete hypothesis. The median comparison supports none of its four tests. The practical conclusion is conditional: an apparent benefit of trimming or of size weighting in one processed corpus and one client construction did not become a general ranking.
+The five-part evaluation is a way of reading the completed work. It was not one protocol written before every part. Parts 1, 2, and 4 were specified before their own results were used. Part 3, the sign-flip check, and Part 5, the data audits, were added later. Treating all five as if they had been fixed in advance would overstate the plan.
 
-Question~2 has the same limit. The CIC directional pattern and the N-BaIoT pattern can be placed side by side. Table~\ref{tab:hetero} shows that the CIC $\alpha=0.1$ partitions are far more unbalanced, in size and in label divergence, than the device partition. The dataset changes at the same time as the client construction, so the design does not isolate client construction as the cause. The duplicate-row audit adds a further limit on what the holdouts measure. About $31.64\%$ of CIC test rows and $59.72\%$ of N-BaIoT test rows are exact copies of a stored training row, and every N-BaIoT test row comes from a device that also appears in training.
+Part 1 separates trimming from client-size weighting. The three-seed CIC grid meets the descriptive trim-help and weight-hurt rules in all four model-by-$\alpha$ cells. The three-seed N-BaIoT device partition meets neither rule for either model. Those directional patterns can be placed side by side. They do not show that client construction caused the difference, because the dataset changes at the same time. Part 2 then supports only one component, T2 $\mathrm{FA}-\mathrm{UW}$, and supports neither complete hypothesis. Part 4 supports none of its four tests. An apparent benefit of trimming or of size weighting in one processed corpus and one client construction did not become a general ranking.
+
+Part 5 limits what those rankings can mean. Table~\ref{tab:hetero} shows that the CIC $\alpha=0.1$ partitions are far more unbalanced, in size and in label divergence, than the device partition. About $31.64\%$ of CIC test rows and $59.72\%$ of N-BaIoT test rows are exact copies of a stored training row, and every N-BaIoT test row comes from a device that also appears in training.
 
 The official decision is the paired-$t$ Holm family in Table~\ref{tab:e4}. The exact sign-flip family in Table~\ref{tab:signflip} is the sensitivity a reader should see at $n=7$: after Holm correction it supports no comparison, and the family size makes a $0.05$ exact decision unreachable. That sensitivity does not erase the preregistered paired-$t$ result. It limits how strongly a seven-seed sign pattern can be read.
 
 The three-seed tables estimate limited run-to-run variation. The seven-seed family includes no CIC $\alpha=0.5$ cell. The nine device identities are the observed N-BaIoT device set in this corpus. The $20{,}000$-row cap changes natural client-size balance. The pooled-train scaler is not private per-device preprocessing. The per-class figure is a three-seed CIC display, not a seven-seed test and not a rare-class result. FedNova was not brought to a decision and remains deferred, so its accuracy on these blocks is unmeasured. SCAFFOLD was not an arm. No malicious-client attack, secure aggregation, differential-privacy guarantee, wireless impairment, or physical deployment is evaluated. Full-scaler scores, including IID anchors for their original arms, stay in a separate lineage and supply no IID observation for unweighted FedAvg or for size-weighted trimmed mean. Study identifiers, approval dates, and checksums are in the supplementary note.
 
 \section{Conclusion}
-The three questions have direct answers on the evidence in hand. On the preregistered seven-seed family, Holm correction supports one contrast: on the CIC convolutional network at $\alpha=0.1$, size-weighted FedAvg finishes $10.7252$ percentage points below unweighted FedAvg in Final macro-F1. The remaining 15 contrasts are inconclusive, and neither the complete trim-help hypothesis nor the complete weight-hurt hypothesis is supported. The three-seed CIC Dirichlet directional patterns are not all present on the N-BaIoT device partition, and that comparison does not isolate client construction because the dataset changes as well. None of four Holm tests supports a difference between the trimmed mean and the coordinate-wise median on the same four blocks and seven seeds. After Holm correction, a post-hoc exact sign-flip analysis supports none of the 16 contrasts. Pooled test sets contain duplicate training rows, and the N-BaIoT test uses the same devices as training. Clients are simulated partitions. The apparent benefits of trimming and of client-size weighting in this study depend on the dataset and on the client construction.
+The five parts have direct answers, and those answers keep the distinction between planned comparisons and later checks. In Part 1, the three-seed CIC directional pattern is not repeated on the N-BaIoT device partition, and that comparison does not isolate client construction because the dataset also changes. In Part 2, the preregistered seven-seed test supports one contrast: on the CIC convolutional network at $\alpha=0.1$, size-weighted FedAvg finishes $10.7252$ percentage points below unweighted FedAvg in Final macro-F1. The other 15 contrasts are inconclusive, and neither complete hypothesis is supported. In Part 3, the post-hoc sign-flip check supports none of those 16 contrasts after Holm correction. In Part 4, none of four Holm tests supports a difference between the trimmed mean and the coordinate-wise median. In Part 5, both pooled test sets contain exact copies of stored training rows, and the N-BaIoT test uses the same devices as training. Clients are simulated partitions. The apparent benefits of trimming and of client-size weighting depend on the dataset and on the client construction.
 
 \section{Data and reproducibility}
 Training used Python~3.12.10, NumPy~2.3.5, pandas~3.0.1, scikit-learn~1.8.0, SciPy~1.17.1, and PyTorch~2.5.1 with CUDA~12.1 on a Quadro~P3200. The new figures were drawn with Matplotlib~3.10.8. The primary local sources are the CIC confirmatory packet, the N-BaIoT device packet, the seven-seed packet, the 28 median cells, and the descriptive per-class table. Their manifests cover the written results and the processed caches. They do not independently hash every original source CSV. The public archive for this manuscript is \url{https://github.com/sheryar827/fl-iot-trimming-weighting-archive}. The supplement gives that address, the checksums of the two processed feature matrices, and the acquisition instructions for the public corpora. The result tables, cell records, manifests, and figure code are published in that repository. Those two matrices exceed the ordinary git file-size limit and are identified by checksum. The repository at \url{https://github.com/sheryar827/fl-iot-botnet-nbaiot-cic-iot2023} is the earlier three-arm lineage, and its README labels it as that lineage. Headline comparisons there are not the results of this article. The record at \url{https://doi.org/10.5281/zenodo.20456827} resolves to the immutable v1.0.0 snapshot \url{https://doi.org/10.5281/zenodo.20456828}, published on 30~May~2026. That snapshot is the three-arm study. It was not given a new version for this article, and it does not contain these packets.
