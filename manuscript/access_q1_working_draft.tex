@@ -108,17 +108,17 @@ The completed evidence is reported as a five-part evaluation. The parts were not
 \end{enumerate}
 The contribution is this separation, reported with those limits. Once trimming and client-size weighting are crossed, apparent benefits depend on the dataset and on how the clients are built. One weighting contrast survives the preregistered seven-seed test. The broader trimming hypotheses and the median comparison remain inconclusive. The clients are simulated partitions of two public corpora. The study includes no privacy mechanism, no rare-class benefit, no adversarial client, and no physical deployment, and it uses no equivalence procedure.
 
-Figure~\ref{fig:lineages} separates the developmental and central-evidence lineages. Results produced with a scaler fit to the full split are not pooled with results produced with a training-only scaler.
+Figure~\ref{fig:lineages} shows the five parts. Parts 1, 2, and 4 were specified before their own results were used. Parts 3 and 5 were added later. The left-to-right order is a reading order, not a causal chain.
 
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=\textwidth]{q1_study_lineages.png}
-\caption{Study flow. Full-scaler experiments exposed the trim-versus-weight confound and stay in a separate lineage. Train-scaler blocks supply the central four-arm evidence. Arrows show sequence. Scores are not pooled across the two scaler lineages, and the figure is not a results table.}
+\caption{The five-part evaluation. Parts 1, 2, and 4 were specified before their own results were used. Parts 3 and 5 were later checks of stored results. Full-scaler runs, per-class means, training time, and model size sit outside the five parts. The left-to-right order is not a causal chain.}
 \label{fig:lineages}
 \end{figure*}
 
 \section{Related work and scope}
-The framework in this article is an evaluation plan for one narrow question: what changes when coordinate-wise trimming and client-size weighting are separated, and how far those comparisons can be trusted. It is not a new detector and not a claim that every robust-aggregation paper should use the same five parts. The related studies below each answer a different question. Table~\ref{tab:closest} states what Part 1, the two-by-two comparison, adds to each of them.
+This article uses a layered evaluation framework for one narrow question: what changes when coordinate-wise trimming and client-size weighting are separated, and how far those comparisons can be trusted. It is not a new detector and not a claim that every robust-aggregation paper should use the same five parts. The related studies below each answer a different question. Table~\ref{tab:closest} states what Part 1, the two-by-two comparison, adds to each of them.
 
 FedAvg averages locally trained models with client-data-size weights \cite{mcmahan17}. FedProx adds a proximal term to the local objective \cite{li20}. SCAFFOLD uses control variates to correct client drift \cite{karimireddy20}. FedNova normalizes heterogeneous local progress to address objective inconsistency \cite{wang20fednova}. These methods act at different points in optimization. SCAFFOLD and FedNova are relevant to heterogeneity, but neither is an arm in the experiments below, and neither replaces the two-factor test of server-side trimming and client-size weighting.
 
